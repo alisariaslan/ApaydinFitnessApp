@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DuyurularAdmin">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="5dp"
+                android:theme="@style/Theme.ApaydinFitness.Card"
+                app:cardBackgroundColor="#B3121000"
+                app:cardCornerRadius="50dp"
+                app:contentPaddingBottom="30dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView20"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/audiowide"
+                        android:gravity="center"
+                        android:text="Duyuru Panel"
+                        android:textColor="#D1D1D1"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView20">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView35"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:paddingBottom="10dp"
+                            app:cardBackgroundColor="@color/textFrontOfYellow"
+                            app:cardCornerRadius="50dp"
+                            app:contentPaddingBottom="15dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/textView52"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:fontFamily="@font/audiowide"
+                                    android:gravity="center"
+                                    android:text="Duyuru Oluştur"
+                                    android:textColor="#D1D1D1"
+                                    android:textSize="20sp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/textView51"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginEnd="20dp"
+                                    android:fontFamily="@font/audiowide"
+                                    android:text="Yayınladığınız duyuru kullanıcı eğer sistemdeyse en geç 5 dakika içerisinde kullanıcıya ulaşır!"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/white" />
+
+                                <ProgressBar
+                                    android:id="@+id/progressBar5"
+                                    style="?android:attr/progressBarStyle"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="100dp"
+                                    android:visibility="gone"
+                                    tools:visibility="visible" />
+
+                                <EditText
+                                    android:id="@+id/editTextTextPersonName29"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:fontFamily="@font/allerta"
+                                    android:gravity="center|top"
+                                    android:hint="Duyurunuzu yazın"
+                                    android:inputType="none|textMultiLine"
+                                    android:minLines="2"
+                                    android:paddingStart="10dp"
+                                    android:paddingTop="30dp"
+                                    android:paddingEnd="10dp"
+                                    android:textColor="#D1D1D1"
+                                    android:textColorHint="#6E6E6E" />
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <Button
+                                        android:id="@+id/button27"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="10dp"
+                                        android:layout_weight="1"
+                                        android:backgroundTint="@color/cardBackground"
+                                        android:drawableTop="@drawable/copy"
+                                        android:fontFamily="@font/audiowide"
+                                        android:minLines="2"
+                                        android:text="Kopyala"
+                                        android:textColor="@color/textFrontOfYellow"
+                                        android:textSize="12sp"
+                                        app:cornerRadius="30dp" />
+
+                                    <Button
+                                        android:id="@+id/button28"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="10dp"
+                                        android:layout_weight="1"
+                                        android:backgroundTint="@color/cardBackground"
+                                        android:drawableTop="@drawable/paste"
+                                        android:fontFamily="@font/audiowide"
+                                        android:minLines="2"
+                                        android:text="Yapıştır"
+                                        android:textColor="@color/textFrontOfYellow"
+                                        android:textSize="12sp"
+                                        app:cornerRadius="30dp" />
+
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <Button
+                                        android:id="@+id/button12"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="10dp"
+                                        android:layout_weight="1"
+                                        android:backgroundTint="@color/cardBackground"
+                                        android:drawableTop="@drawable/publish"
+                                        android:fontFamily="@font/audiowide"
+                                        android:minLines="2"
+                                        android:text="Yayınla"
+                                        android:textColor="@color/textFrontOfYellow"
+                                        android:textSize="12sp"
+                                        app:cornerRadius="30dp" />
+
+                                    <Button
+                                        android:id="@+id/button30"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_margin="10dp"
+                                        android:layout_weight="1"
+                                        android:backgroundTint="@color/cardBackground"
+                                        android:drawableTop="@drawable/clear"
+                                        android:fontFamily="@font/audiowide"
+                                        android:minLines="2"
+                                        android:text="Temizle"
+                                        android:textColor="@color/textFrontOfYellow"
+                                        android:textSize="12sp"
+                                        app:cornerRadius="30dp" />
+                                </TableRow>
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView34"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginEnd="10dp"
+                            android:paddingBottom="10dp"
+                            app:cardBackgroundColor="@color/textFrontOfYellow"
+                            app:cardCornerRadius="50dp"
+                            app:contentPaddingBottom="15dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/textView53"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:drawableEnd="@drawable/apaydin_fitness_icon_small"
+                                    android:fontFamily="@font/audiowide"
+                                    android:gravity="center"
+                                    android:text="Son Yayınlanan Duyuru"
+                                    android:textColor="#D1D1D1"
+                                    android:textSize="20sp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ProgressBar
+                                    android:id="@+id/progressBar6"
+                                    style="?android:attr/progressBarStyle"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="100dp"
+                                    android:visibility="gone"
+                                    tools:visibility="visible" />
+
+                                <TextView
+                                    android:id="@+id/textView54"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginEnd="20dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:fontFamily="@font/allerta"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/white" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView32"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginEnd="10dp"
+                            android:paddingBottom="10dp"
+                            app:cardBackgroundColor="@color/textFrontOfYellow"
+                            app:cardCornerRadius="50dp"
+                            app:contentPaddingBottom="15dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/textView56"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:fontFamily="@font/audiowide"
+                                    android:gravity="center"
+                                    android:text="Arındır"
+                                    android:textColor="#D1D1D1"
+                                    android:textSize="20sp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ProgressBar
+                                    android:id="@+id/progressBar7"
+                                    style="?android:attr/progressBarStyle"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="100dp"
+                                    android:visibility="gone"
+                                    tools:visibility="visible" />
+
+                                <TextView
+                                    android:id="@+id/textView55"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginEnd="20dp"
+                                    android:fontFamily="@font/audiowide"
+                                    android:text="Yerel ve Uzak Veritabanlarını temizler"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/white" />
+
+                                <Button
+                                    android:id="@+id/button19"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="10dp"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="@color/cardBackground"
+                                    android:drawableTop="@drawable/baslat"
+                                    android:fontFamily="@font/audiowide"
+                                    android:minLines="2"
+                                    android:text="Başlat"
+                                    android:textColor="@color/textFrontOfYellow"
+                                    android:textSize="12sp"
+                                    app:cornerRadius="30dp" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

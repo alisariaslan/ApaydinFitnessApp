@@ -1,0 +1,929 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AntrenorMenu">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="30dp"
+                android:theme="@style/Theme.ApaydinFitness.Card"
+                app:cardBackgroundColor="#B3121000"
+                app:cardCornerRadius="50dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingBottom="15dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView53"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="10dp"
+                        android:paddingBottom="10dp"
+                        android:theme="@style/Theme.ApaydinFitness.InCard"
+                        app:cardCornerRadius="50dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <TextView
+                                    android:id="@+id/textView48"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:fontFamily="@font/audiowide"
+                                    android:text="Online Profil Ara"
+                                    android:textAlignment="center"
+                                    android:textSize="20sp" />
+
+                                <ProgressBar
+                                    android:id="@+id/progressBar7"
+                                    style="?android:attr/progressBarStyle"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="100dp"
+                                    android:visibility="gone"
+                                    tools:visibility="visible" />
+
+                                <EditText
+                                    android:id="@+id/editTextTextPersonName28"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:ems="10"
+                                    android:fontFamily="@font/allerta"
+                                    android:hint="İsim Soyisim"
+                                    android:inputType="textPersonName"
+                                    android:textAlignment="center"
+                                    android:textSize="16sp" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/constraintLayout8"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="10dp"
+                                    android:visibility="gone"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName27"
+                                    tools:visibility="visible">
+
+                                    <Spinner
+                                        android:id="@+id/spinner13"
+                                        android:layout_width="0dp"
+                                        android:layout_height="40dp"
+                                        android:layout_marginStart="50dp"
+                                        android:layout_marginEnd="50dp"
+                                        android:background="@drawable/gradientbutton"
+                                        android:spinnerMode="dialog"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/textView49"
+                                        android:layout_width="0dp"
+                                        android:layout_height="40dp"
+                                        android:layout_marginStart="50dp"
+                                        android:layout_marginEnd="60dp"
+                                        android:background="#00FFFFFF"
+                                        android:drawableRight="@drawable/dropdown"
+                                        android:fontFamily="@font/allerta"
+                                        android:gravity="center"
+                                        android:text="Tarih"
+                                        android:textAlignment="center"
+                                        android:textColor="#393939"
+                                        android:textSize="16sp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <Switch
+                                        android:id="@+id/switch1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/audiowide"
+                                        android:text="Karşılaştır"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/textView49" />
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                <HorizontalScrollView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="10dp">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/textView19"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="15dp"
+                                            android:fontFamily="@font/allerta"
+                                            android:text="TextView"
+                                            android:textSize="16sp"
+                                            android:visibility="gone"
+                                            tools:visibility="visible" />
+                                    </LinearLayout>
+                                </HorizontalScrollView>
+
+                                <Button
+                                    android:id="@+id/button26"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/audiowide"
+                                    android:text="Görüntüle"
+                                    android:textColor="@color/textFrontOfYellow"
+                                    android:translationY="10dp"
+                                    app:backgroundTint="@color/cardBackground" />
+                            </LinearLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/audiowide"
+                        android:text="Antrenör Menü"
+                        android:textAlignment="center"
+                        android:textColor="#D1D1D1"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView54"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="10dp"
+                        android:paddingBottom="10dp"
+                        android:theme="@style/Theme.ApaydinFitness.InCard"
+                        app:cardCornerRadius="50dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardView53">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/textView42"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/audiowide"
+                                android:text="Online Profil Oluştur"
+                                android:textAlignment="center"
+                                android:textSize="20sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ProgressBar
+                                android:id="@+id/progressBar2"
+                                style="?android:attr/progressBarStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="100dp"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textView42"
+                                tools:visibility="visible" />
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/progressBar2"
+                                tools:visibility="visible">
+
+                                <EditText
+                                    android:id="@+id/editTextTextPersonName7"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:ems="10"
+                                    android:fontFamily="@font/allerta"
+                                    android:hint="Tarih"
+                                    android:inputType="textPersonName"
+                                    android:textAlignment="center"
+                                    android:textSize="16sp" />
+
+                                <EditText
+                                    android:id="@+id/editTextTextPersonName8"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:ems="10"
+                                    android:fontFamily="@font/allerta"
+                                    android:hint="Ad"
+                                    android:inputType="textPersonName"
+                                    android:textAlignment="center"
+                                    android:textSize="16sp" />
+
+                                <EditText
+                                    android:id="@+id/editTextTextPersonName10"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:ems="10"
+                                    android:fontFamily="@font/allerta"
+                                    android:hint="Yaş"
+                                    android:inputType="textPersonName"
+                                    android:textAlignment="center"
+                                    android:textSize="16sp" />
+
+                                <RadioGroup
+                                    android:id="@+id/radiogroup"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:checkedButton="@id/radioButton6"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/textView43"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/audiowide"
+                                        android:text="Cinsiyet"
+                                        android:textAlignment="center"
+                                        android:textSize="16sp" />
+
+                                    <RadioButton
+                                        android:id="@+id/radioButton6"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/audiowide"
+                                        android:text="Erkek"
+                                        android:textSize="16sp" />
+
+                                    <RadioButton
+                                        android:id="@+id/radioButton7"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/audiowide"
+                                        android:text="Kadın"
+                                        android:textSize="16sp" />
+                                </RadioGroup>
+
+                                <EditText
+                                    android:id="@+id/editTextTextPersonName11"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:ems="10"
+                                    android:fontFamily="@font/allerta"
+                                    android:hint="Kilo"
+                                    android:inputType="textPersonName"
+                                    android:textAlignment="center"
+                                    android:textSize="16sp" />
+
+                                <EditText
+                                    android:id="@+id/editTextTextPersonName12"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:ems="10"
+                                    android:fontFamily="@font/allerta"
+                                    android:hint="Boy"
+                                    android:inputType="textPersonName"
+                                    android:textAlignment="center"
+                                    android:textSize="16sp" />
+
+                                <EditText
+                                    android:id="@+id/editTextTextPersonName13"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:ems="10"
+                                    android:fontFamily="@font/allerta"
+                                    android:hint="Boyun"
+                                    android:inputType="textPersonName"
+                                    android:textAlignment="center"
+                                    android:textSize="16sp" />
+
+                                <EditText
+                                    android:id="@+id/editTextTextPersonName15"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:ems="10"
+                                    android:fontFamily="@font/allerta"
+                                    android:hint="Ön Kol"
+                                    android:inputType="textPersonName"
+                                    android:textAlignment="center"
+                                    android:textSize="16sp" />
+
+                                <EditText
+                                    android:id="@+id/editTextTextPersonName16"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:ems="10"
+                                    android:fontFamily="@font/allerta"
+                                    android:hint="Kol"
+                                    android:inputType="textPersonName"
+                                    android:textAlignment="center"
+                                    android:textSize="16sp" />
+
+                                <EditText
+                                    android:id="@+id/editTextTextPersonName17"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:ems="10"
+                                    android:fontFamily="@font/allerta"
+                                    android:hint="Bicep"
+                                    android:inputType="textPersonName"
+                                    android:textAlignment="center"
+                                    android:textSize="16sp" />
+
+                                <EditText
+                                    android:id="@+id/editTextTextPersonName18"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:ems="10"
+                                    android:fontFamily="@font/allerta"
+                                    android:hint="Omuz"
+                                    android:inputType="textPersonName"
+                                    android:textAlignment="center"
+                                    android:textSize="16sp" />
+
+                                <EditText
+                                    android:id="@+id/editTextTextPersonName19"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:ems="10"
+                                    android:fontFamily="@font/allerta"
+                                    android:hint="Göğüs"
+                                    android:inputType="textPersonName"
+                                    android:textAlignment="center"
+                                    android:textSize="16sp" />
+
+                                <EditText
+                                    android:id="@+id/editTextTextPersonName20"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:ems="10"
+                                    android:fontFamily="@font/allerta"
+                                    android:hint="Karın"
+                                    android:inputType="textPersonName"
+                                    android:textAlignment="center"
+                                    android:textSize="16sp" />
+
+                                <EditText
+                                    android:id="@+id/editTextTextPersonName21"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:ems="10"
+                                    android:fontFamily="@font/allerta"
+                                    android:hint="Kalça"
+                                    android:inputType="textPersonName"
+                                    android:textAlignment="center"
+                                    android:textSize="16sp" />
+
+                                <EditText
+                                    android:id="@+id/editTextTextPersonName22"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:ems="10"
+                                    android:fontFamily="@font/allerta"
+                                    android:hint="Bacak"
+                                    android:inputType="textPersonName"
+                                    android:textAlignment="center"
+                                    android:textSize="16sp" />
+
+                                <EditText
+                                    android:id="@+id/editTextTextPersonName23"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:ems="10"
+                                    android:fontFamily="@font/allerta"
+                                    android:hint="Calf"
+                                    android:inputType="textPersonName"
+                                    android:textAlignment="center"
+                                    android:textSize="16sp" />
+
+                                <EditText
+                                    android:id="@+id/editTextTextPersonName24"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:ems="10"
+                                    android:fontFamily="@font/allerta"
+                                    android:hint="Antrenör"
+                                    android:inputType="textPersonName"
+                                    android:textAlignment="center"
+                                    android:textSize="16sp" />
+
+                            </LinearLayout>
+
+                            <Button
+                                android:id="@+id/button24"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/audiowide"
+                                android:text="Yeni oluştur"
+                                android:textColor="@color/textFrontOfYellow"
+                                android:translationY="10dp"
+                                app:backgroundTint="@color/cardBackground"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView43"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="10dp"
+                        android:paddingBottom="10dp"
+                        android:theme="@style/Theme.ApaydinFitness.InCard"
+                        app:cardCornerRadius="50dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardView54">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            tools:visibility="visible">
+
+                            <TextView
+                                android:id="@+id/textView41"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/audiowide"
+                                android:text="Online Profil Düzenle"
+                                android:textAlignment="center"
+                                android:textSize="20sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textView41">
+
+                                <ProgressBar
+                                    android:id="@+id/progressBar3"
+                                    style="?android:attr/progressBarStyle"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="100dp"
+                                    android:visibility="gone"
+                                    tools:visibility="visible" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="10dp">
+
+                                    <EditText
+                                        android:id="@+id/editTextTextPersonName25"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:ems="10"
+                                        android:fontFamily="@font/allerta"
+                                        android:hint="İsim Soyisim"
+                                        android:inputType="textPersonName"
+                                        android:textAlignment="center"
+                                        android:textSize="16sp"
+                                        app:layout_constraintEnd_toStartOf="@+id/textView45"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <Spinner
+                                        android:id="@+id/spinner11"
+                                        android:layout_width="0dp"
+                                        android:layout_height="40dp"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/gradientbutton"
+                                        android:spinnerMode="dialog"
+                                        android:visibility="gone"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName25"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        tools:visibility="visible" />
+
+                                    <TextView
+                                        android:id="@+id/textView45"
+                                        android:layout_width="0dp"
+                                        android:layout_height="40dp"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="20dp"
+                                        android:background="#00FFFFFF"
+                                        android:drawableRight="@drawable/dropdown"
+                                        android:fontFamily="@font/allerta"
+                                        android:gravity="center"
+                                        android:text="Tarih:"
+                                        android:textAlignment="center"
+                                        android:textColor="#393939"
+                                        android:textSize="16sp"
+                                        android:visibility="gone"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName25"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        tools:visibility="visible" />
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/constrainlayout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="10dp"
+                                    android:visibility="gone"
+                                    tools:visibility="visible">
+
+                                    <EditText
+                                        android:id="@+id/editTextTextPersonName26"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="10dp"
+                                        android:ems="10"
+                                        android:fontFamily="@font/allerta"
+                                        android:hint="Yeni Değer"
+                                        android:inputType="textPersonName"
+                                        android:textAlignment="center"
+                                        android:textSize="16sp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toEndOf="@+id/textView44"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <Spinner
+                                        android:id="@+id/spinner10"
+                                        android:layout_width="0dp"
+                                        android:layout_height="40dp"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/gradientbutton"
+                                        android:spinnerMode="dialog"
+                                        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName26"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/textView44"
+                                        android:layout_width="0dp"
+                                        android:layout_height="40dp"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="20dp"
+                                        android:background="#00FFFFFF"
+                                        android:drawableRight="@drawable/dropdown"
+                                        android:fontFamily="@font/allerta"
+                                        android:gravity="center"
+                                        android:text="Ölçü:"
+                                        android:textAlignment="center"
+                                        android:textColor="#393939"
+                                        android:textSize="16sp"
+                                        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName26"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            </LinearLayout>
+
+                            <Button
+                                android:id="@+id/button21"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/audiowide"
+                                android:tag="0"
+                                android:text="Bul"
+                                android:textColor="@color/textFrontOfYellow"
+                                android:translationY="10dp"
+                                app:backgroundTint="@color/cardBackground"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="1.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/linearLayout2" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView41"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="10dp"
+                        android:paddingBottom="10dp"
+                        android:theme="@style/Theme.ApaydinFitness.InCard"
+                        app:cardCornerRadius="50dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardView43">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/textView40"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/audiowide"
+                                android:text="Online Profil Sil"
+                                android:textAlignment="center"
+                                android:textSize="20sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ProgressBar
+                                android:id="@+id/progressBar4"
+                                style="?android:attr/progressBarStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="100dp"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textView40"
+                                tools:visibility="visible" />
+
+                            <EditText
+                                android:id="@+id/editTextTextPersonName27"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:ems="10"
+                                android:fontFamily="@font/allerta"
+                                android:hint="İsim Soyisim"
+                                android:inputType="textPersonName"
+                                android:textAlignment="center"
+                                android:textSize="16sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/progressBar4" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/constraintLayout7"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName27"
+                                tools:visibility="visible">
+
+                                <Spinner
+                                    android:id="@+id/spinner12"
+                                    android:layout_width="0dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginStart="50dp"
+                                    android:layout_marginEnd="50dp"
+                                    android:background="@drawable/gradientbutton"
+                                    android:spinnerMode="dialog"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/textView46"
+                                    android:layout_width="0dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginStart="50dp"
+                                    android:layout_marginEnd="60dp"
+                                    android:background="#00FFFFFF"
+                                    android:drawableRight="@drawable/dropdown"
+                                    android:fontFamily="@font/allerta"
+                                    android:gravity="center"
+                                    android:text="Tarih"
+                                    android:textAlignment="center"
+                                    android:textColor="#393939"
+                                    android:textSize="16sp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <Button
+                                android:id="@+id/button20"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/audiowide"
+                                android:tag="0"
+                                android:text="Bul"
+                                android:textColor="@color/textFrontOfYellow"
+                                android:translationY="10dp"
+                                app:backgroundTint="@color/cardBackground"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="1.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/constraintLayout7" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView39"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="10dp"
+                        android:paddingBottom="10dp"
+                        android:theme="@style/Theme.ApaydinFitness.InCard"
+                        app:cardCornerRadius="50dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardView41">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/textView39"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/audiowide"
+                                android:text="Kod Oluştur"
+                                android:textAlignment="center"
+                                android:textSize="20sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/textView18"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/audiowide"
+                                android:gravity="center"
+                                android:text="KOD"
+                                android:textAlignment="center"
+                                android:textIsSelectable="true"
+                                android:textSize="48sp"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textView39"
+                                tools:visibility="visible" />
+
+                            <ImageView
+                                android:id="@+id/imageView6"
+                                android:layout_width="0dp"
+                                android:layout_height="400dp"
+                                android:scaleType="centerCrop"
+                                android:src="@android:drawable/ic_lock_idle_lock"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textView18"
+                                tools:visibility="visible" />
+
+                            <RadioGroup
+                                android:id="@+id/radioGroup2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:checkedButton="@id/radioButton4"
+                                android:orientation="vertical"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/imageView6">
+
+                                <RadioButton
+                                    android:id="@+id/radioButton4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="@font/allerta"
+                                    android:text="QR ile Oluştur" />
+
+                                <RadioButton
+                                    android:id="@+id/radioButton5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="@font/allerta"
+                                    android:text="Manuel Oluştur" />
+                            </RadioGroup>
+
+                            <Button
+                                android:id="@+id/button39"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/audiowide"
+                                android:tag="0"
+                                android:text="Oluştur"
+                                android:textColor="@color/textFrontOfYellow"
+                                android:translationY="10dp"
+                                app:backgroundTint="@color/cardBackground"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

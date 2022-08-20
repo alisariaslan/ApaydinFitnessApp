@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Apaydın Fitness</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <!-- TEST ADDS -->
+<!--        <string name="id">ca-app-pub-8946455145480386~7405905971</string>-->
+<!--        <string name="add">ca-app-pub-3940256099942544/1033173712</string>-->
+
+    <!-- REAL ADDS -->
+    <string name="id">ca-app-pub-8946455145480386~7405905971</string>
+    <string name="add">ca-app-pub-8946455145480386/2153579296</string>
+</resources>

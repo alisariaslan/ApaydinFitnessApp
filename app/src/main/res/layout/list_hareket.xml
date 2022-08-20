@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_hareket"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <Button
+        android:id="@+id/btn_hareket"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:drawableTop="@drawable/benchpress"
+        android:fontFamily="@font/allerta"
+        android:gravity="center"
+        android:minLines="3"
+        android:tag="0"
+        android:text="Bench Press\n4 Set 20 Tekrar\nSet Arası 30 Saniye Dinlenme"
+        android:textAlignment="center"
+        android:textColor="#393939"
+        android:textSize="14sp"
+        app:backgroundTint="#FFEB3B"
+        app:cornerRadius="100dp"
+        app:layout_constraintEnd_toStartOf="@+id/iv_checked"
+        app:layout_constraintStart_toEndOf="@+id/iv_info"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="#BABABA"
+        app:strokeWidth="1px" />
+
+    <ImageView
+        android:id="@+id/iv_info"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="5dp"
+        android:tag="0"
+        app:layout_constraintBottom_toTopOf="@+id/cl_islev"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/info" />
+
+    <ImageView
+        android:id="@+id/iv_checked"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="5dp"
+        android:tag="0"
+        app:layout_constraintBottom_toTopOf="@+id/cl_islev"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/checked" />
+
+    <TextView
+        android:id="@+id/tv_complete"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:fontFamily="@font/allerta"
+        android:shadowColor="#000000"
+        android:shadowRadius="5"
+        android:text="Bench Press Tamamlandı"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/cl_islev"
+        app:layout_constraintEnd_toStartOf="@+id/iv_checked"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_islev"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_hareket"
+        tools:visibility="visible">
+
+        <Button
+            android:id="@+id/btn_sureBaslat"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_marginStart="5dp"
+            android:drawableTop="@drawable/alarm2"
+            android:fontFamily="@font/allerta"
+            android:gravity="center"
+            android:tag="0"
+            android:text="Süreyi\nBaşlat"
+            android:textAlignment="center"
+            android:textColor="#393939"
+            android:textSize="12sp"
+            app:backgroundTint="#FFEB3B"
+            app:cornerRadius="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="#BABABA"
+            app:strokeWidth="1px" />
+
+        <Button
+            android:id="@+id/btn_sayacArttir"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="10dp"
+            android:drawableLeft="@drawable/plus"
+            android:fontFamily="@font/allerta"
+            android:gravity="center"
+            android:tag="0"
+            android:text="Sayaç\nArttır"
+            android:textAlignment="center"
+            android:textColor="#393939"
+            android:textSize="12sp"
+            app:backgroundTint="#FFEB3B"
+            app:cornerRadius="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="#BABABA"
+            app:strokeWidth="1px" />
+
+        <Button
+            android:id="@+id/btn_sayacAzalt"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="10dp"
+            android:drawableLeft="@drawable/minus"
+            android:fontFamily="@font/allerta"
+            android:gravity="center"
+            android:tag="0"
+            android:text="Sayaç\nAzalt"
+            android:textAlignment="center"
+            android:textColor="#393939"
+            android:textSize="12sp"
+            app:backgroundTint="#FFEB3B"
+            app:cornerRadius="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_sayacArttir"
+            app:strokeColor="#BABABA"
+            app:strokeWidth="1px" />
+
+        <TextView
+            android:id="@+id/tv_sayac"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/gradientbutton"
+            android:fontFamily="@font/audiowide"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="#373737"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_sayacArttir"
+            app:layout_constraintStart_toEndOf="@+id/btn_sureBaslat"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_detaylar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_islev" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

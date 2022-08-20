@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AntrenmanOlusturFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="30dp"
+                android:theme="@style/Theme.ApaydinFitness.Card"
+                app:cardBackgroundColor="#B3121000"
+                app:cardCornerRadius="50dp"
+                app:contentPaddingBottom="30dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/audiowide"
+                        android:text="Program Oluştur ve Düzenle"
+                        android:textAlignment="center"
+                        android:textColor="#D1D1D1"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView35"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="10dp"
+                        android:paddingBottom="10dp"
+                        android:theme="@style/Theme.ApaydinFitness.InCard"
+                        app:cardBackgroundColor="#FFFFFF"
+                        app:cardCornerRadius="50dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/textView15"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="#FFEB3B"
+                                android:fontFamily="@font/audiowide"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:text="Önizleme"
+                                android:textAlignment="center"
+                                android:textColor="#4E4E4E"
+                                android:textSize="20sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/textView16"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:fontFamily="@font/audiowide"
+                                android:gravity="center"
+                                android:minLines="3"
+                                android:text="Herhangi bir program mevcut değil! Lütfen yeni program oluşturun"
+                                android:textSize="14sp"
+                                app:layout_constraintEnd_toStartOf="@+id/imageView7"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+                            <Spinner
+                                android:id="@+id/spinner5"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:background="@drawable/gradientbutton"
+                                android:spinnerMode="dialog"
+                                android:textAlignment="center"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+                            <TextView
+                                android:id="@+id/textView36"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="20dp"
+                                android:background="#00FFFFFF"
+                                android:drawableRight="@drawable/dropdown"
+                                android:fontFamily="@font/audiowide"
+                                android:gravity="center"
+                                android:text="TextView"
+                                android:textColor="@color/textFrontOfYellow"
+                                android:textSize="16sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recyview"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:paddingBottom="15dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/spinner5" />
+
+                            <ImageView
+                                android:id="@+id/imageView7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:src="@drawable/delete"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardView35">
+
+                        <Button
+                            android:id="@+id/button21"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#FFEB3B"
+                            android:fontFamily="@font/audiowide"
+                            android:minLines="4"
+                            android:text="Program Oluştur"
+                            android:textColor="#474747"
+                            android:textSize="12sp"
+                            app:cornerRadius="30dp"
+                            app:layout_constraintEnd_toStartOf="@+id/button22"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <Button
+                            android:id="@+id/button22"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:backgroundTint="#FFEB3B"
+                            android:fontFamily="@font/audiowide"
+                            android:minLines="4"
+                            android:text="Hareket Düzenle"
+                            android:textColor="#474747"
+                            android:textSize="12sp"
+                            app:cornerRadius="30dp"
+                            app:layout_constraintEnd_toStartOf="@+id/button23"
+                            app:layout_constraintStart_toEndOf="@+id/button21"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <Button
+                            android:id="@+id/button23"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#FFEB3B"
+                            android:fontFamily="@font/audiowide"
+                            android:minLines="4"
+                            android:text="Tüm Hareketler"
+                            android:textColor="#474747"
+                            android:textSize="12sp"
+                            app:cornerRadius="30dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/button22"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView34"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="10dp"
+                        android:theme="@style/Theme.ApaydinFitness.InCard"
+                        android:visibility="gone"
+                        app:cardBackgroundColor="#fff"
+                        app:cardCornerRadius="50dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"
+                        tools:visibility="visible">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingBottom="10dp">
+
+                            <Button
+                                android:id="@+id/button20"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/cardBackground"
+                                android:fontFamily="@font/audiowide"
+                                android:paddingTop="20dp"
+                                android:paddingBottom="10dp"
+                                android:text="Program Oluştur"
+                                android:textColor="#575757"
+                                android:textSize="16sp"
+                                android:translationY="-10dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <EditText
+                                android:id="@+id/editTextTextPersonName4"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="90dp"
+                                android:layout_marginEnd="90dp"
+                                android:ems="10"
+                                android:fontFamily="@font/allerta"
+                                android:hint="Program Adı"
+                                android:inputType="textPersonName"
+                                android:textAlignment="center"
+                                android:textSize="16sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/button20" />
+
+                            <TextView
+                                android:id="@+id/textView17"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:background="#00FFFFFF"
+                                android:fontFamily="@font/audiowide"
+                                android:gravity="center"
+                                android:text="Liste Boş"
+                                android:textAlignment="center"
+                                android:textSize="14sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+
+                            <EditText
+                                android:id="@+id/editTextTextPersonName5"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:ems="10"
+                                android:fontFamily="@font/allerta"
+                                android:hint="Gün Adı"
+                                android:inputType="textPersonName"
+                                android:textAlignment="center"
+                                android:textSize="16sp"
+                                app:layout_constraintEnd_toStartOf="@+id/btn_ProgramGunEkle"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/reciView" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/reciView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+                            <Button
+                                android:id="@+id/btn_ProgramGunEkle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="10dp"
+                                android:backgroundTint="#FFC107"
+                                android:fontFamily="@font/audiowide"
+                                android:text="Gün Ekle"
+                                android:textColor="#474747"
+                                app:cornerRadius="70dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/reciView" />
+
+                            <Button
+                                android:id="@+id/btn_ProgramOlustur"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:backgroundTint="#FFEB3B"
+                                android:fontFamily="@font/audiowide"
+                                android:text="Oluştur"
+                                android:textColor="#575757"
+                                android:textSize="20sp"
+                                app:cornerRadius="70dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView32"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="10dp"
+                        android:theme="@style/Theme.ApaydinFitness.InCard"
+                        android:visibility="gone"
+                        app:cardBackgroundColor="#fff"
+                        app:cardCornerRadius="50dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.595"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardView33"
+                        tools:visibility="visible">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingBottom="15dp">
+
+                            <Button
+                                android:id="@+id/button29"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/cardBackground"
+                                android:fontFamily="@font/audiowide"
+                                android:paddingTop="20dp"
+                                android:paddingBottom="10dp"
+                                android:text="Tüm Hareketler"
+                                android:textColor="#575757"
+                                android:textSize="16sp"
+                                android:translationY="-10dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/textView22"
+                                android:layout_width="0dp"
+                                android:layout_height="48dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:fontFamily="@font/audiowide"
+                                android:gravity="center"
+                                android:text="Liste Boş"
+                                android:textSize="14sp"
+                                app:layout_constraintEnd_toStartOf="@+id/imageView8"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/button29" />
+
+                            <Spinner
+                                android:id="@+id/spinner6"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="30dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="30dp"
+                                android:background="@drawable/gradientbutton"
+                                android:spinnerMode="dialog"
+                                android:textAlignment="center"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+                            <TextView
+                                android:id="@+id/textView40"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="30dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="40dp"
+                                android:background="#00FFFFFF"
+                                android:drawableRight="@drawable/dropdown"
+                                android:fontFamily="@font/audiowide"
+                                android:gravity="center"
+                                android:text="TextView"
+                                android:textColor="@color/textFrontOfYellow"
+                                android:textSize="16sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/reciview4"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/spinner6" />
+
+                            <EditText
+                                android:id="@+id/editTextTextPersonName222"
+                                android:layout_width="0dp"
+                                android:layout_height="60dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:ems="10"
+                                android:fontFamily="@font/allerta"
+                                android:hint="Hareket Adı"
+                                android:inputType="textPersonName"
+                                android:textAlignment="center"
+                                android:textSize="16sp"
+                                app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName6"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/reciview4" />
+
+                            <EditText
+                                android:id="@+id/editTextTextPersonName6"
+                                android:layout_width="0dp"
+                                android:layout_height="60dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:ems="10"
+                                android:fontFamily="@font/allerta"
+                                android:hint="Bölgesi"
+                                android:inputType="textPersonName"
+                                android:textAlignment="center"
+                                android:textSize="16sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName222"
+                                app:layout_constraintTop_toBottomOf="@+id/reciview4" />
+
+                            <Button
+                                android:id="@+id/button31"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:backgroundTint="#FFEB3B"
+                                android:fontFamily="@font/audiowide"
+                                android:text="Hareketimi Ekle"
+                                android:textColor="#575757"
+                                android:textSize="20sp"
+                                app:cornerRadius="70dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName222" />
+
+                            <ImageView
+                                android:id="@+id/imageView8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="10dp"
+                                android:src="@drawable/delete"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/button29" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView33"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="10dp"
+                        android:paddingBottom="10dp"
+                        android:theme="@style/Theme.ApaydinFitness.InCard"
+                        android:visibility="gone"
+                        app:cardBackgroundColor="#FFFCE6"
+                        app:cardCornerRadius="50dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardView34"
+                        tools:visibility="visible">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            tools:visibility="visible">
+
+                            <Button
+                                android:id="@+id/button36"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/cardBackground"
+                                android:fontFamily="@font/audiowide"
+                                android:paddingTop="20dp"
+                                android:paddingBottom="10dp"
+                                android:text="Hareket Düzenle"
+                                android:textColor="#575757"
+                                android:textSize="16sp"
+                                android:translationY="-10dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cardView44"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                app:cardBackgroundColor="#FFFFFF"
+                                app:cardCornerRadius="50dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/button36">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:paddingBottom="30dp">
+
+                                    <TextView
+                                        android:id="@+id/textView23"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:fontFamily="@font/audiowide"
+                                        android:gravity="center"
+                                        android:text="Program Adı"
+                                        android:textAlignment="center"
+                                        android:textSize="16sp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/textView33"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:fontFamily="@font/audiowide"
+                                        android:gravity="center"
+                                        android:text="Çıkarmak İstediğiniz Harekete Tıklayınız"
+                                        android:textAlignment="center"
+                                        android:textSize="14sp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintHorizontal_bias="0.0"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
+                                    <Spinner
+                                        android:id="@+id/spinner7"
+                                        android:layout_width="0dp"
+                                        android:layout_height="40dp"
+                                        android:layout_marginStart="30dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginEnd="30dp"
+                                        android:background="@drawable/gradientbutton"
+                                        android:spinnerMode="dialog"
+                                        android:textAlignment="center"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintHorizontal_bias="0.0"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/textView33" />
+
+                                    <TextView
+                                        android:id="@+id/textView37"
+                                        android:layout_width="0dp"
+                                        android:layout_height="40dp"
+                                        android:layout_marginStart="30dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginEnd="40dp"
+                                        android:background="#00FFFFFF"
+                                        android:drawableRight="@drawable/dropdown"
+                                        android:fontFamily="@font/audiowide"
+                                        android:gravity="center"
+                                        android:text="TextView"
+                                        android:textColor="@color/textFrontOfYellow"
+                                        android:textSize="16sp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintHorizontal_bias="1.0"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/textView33" />
+
+                                    <androidx.recyclerview.widget.RecyclerView
+                                        android:id="@+id/reciview2"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginEnd="10dp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/spinner7" />
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="30dp"
+                                app:cardBackgroundColor="#FFFFFF"
+                                app:cardCornerRadius="50dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/cardView44">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:paddingBottom="30dp">
+
+                                    <EditText
+                                        android:id="@+id/editTextTextPersonName9"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:ems="10"
+                                        android:fontFamily="@font/allerta"
+                                        android:hint="Açıklama Ekleyin"
+                                        android:inputType="textPersonName"
+                                        android:textAlignment="center"
+                                        android:textSize="16sp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/textView32"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:fontFamily="@font/audiowide"
+                                        android:gravity="center"
+                                        android:text="Eklemek İstediğiniz Harekete Tıklayınız"
+                                        android:textAlignment="center"
+                                        android:textSize="14sp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName9" />
+
+                                    <Spinner
+                                        android:id="@+id/spinner8"
+                                        android:layout_width="0dp"
+                                        android:layout_height="40dp"
+                                        android:layout_marginStart="30dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginEnd="30dp"
+                                        android:background="@drawable/gradientbutton"
+                                        android:spinnerMode="dialog"
+                                        android:textAlignment="center"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/textView32" />
+
+                                    <TextView
+                                        android:id="@+id/textView38"
+                                        android:layout_width="0dp"
+                                        android:layout_height="40dp"
+                                        android:layout_marginStart="30dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginEnd="40dp"
+                                        android:background="#00FFFFFF"
+                                        android:drawableRight="@drawable/dropdown"
+                                        android:fontFamily="@font/audiowide"
+                                        android:gravity="center"
+                                        android:text="TextView"
+                                        android:textColor="@color/textFrontOfYellow"
+                                        android:textSize="16sp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintHorizontal_bias="0.0"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/textView32" />
+
+                                    <androidx.recyclerview.widget.RecyclerView
+                                        android:id="@+id/reciview3"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginEnd="10dp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/spinner8" />
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                            </androidx.cardview.widget.CardView>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

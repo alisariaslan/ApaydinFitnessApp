@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="370dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_dialogBaslik"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#FFEB3B"
+        android:backgroundTint="#FFEB3B"
+        android:fontFamily="@font/audiowide"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="UYARI"
+        android:textAlignment="center"
+        android:textColor="#474747"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_dialogText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/allerta"
+        android:gravity="center_vertical"
+        android:text="Yazı"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_positive"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_dialogBaslik" />
+
+    <Button
+        android:id="@+id/btn_positive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:backgroundTint="#FFEB3B"
+        android:fontFamily="@font/audiowide"
+        android:minLines="4"
+        android:text="Evet"
+        android:textColor="#474747"
+        android:textSize="10sp"
+        android:visibility="gone"
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_negative"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_dialogText"
+        app:layout_constraintTop_toBottomOf="@+id/tv_dialogBaslik"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/btn_negative"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:backgroundTint="#FFEB3B"
+        android:fontFamily="@font/audiowide"
+        android:minLines="4"
+        android:text="Hayır"
+        android:textColor="#474747"
+        android:textSize="10sp"
+        android:visibility="gone"
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_neutral"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_dialogText"
+        app:layout_constraintTop_toBottomOf="@+id/btn_positive"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/btn_neutral"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:backgroundTint="#FFEB3B"
+        android:fontFamily="@font/audiowide"
+        android:minLines="4"
+        android:text="Nötr"
+        android:textColor="#474747"
+        android:textSize="10sp"
+        android:visibility="gone"
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_dialogText"
+        app:layout_constraintTop_toBottomOf="@+id/btn_negative"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
