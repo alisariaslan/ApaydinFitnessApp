@@ -36,6 +36,9 @@
         <action
             android:id="@+id/action_mainFragment_to_saatlerFragment"
             app:destination="@id/saatlerFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_arenaFragment"
+            app:destination="@id/arenaFragment" />
     </fragment>
     <fragment
         android:id="@+id/olculerimFragment"
@@ -105,4 +108,9 @@
         android:name="com.pakachu.apaydinfitness.DuyurularAdmin"
         android:label="fragment_duyurular_admin"
         tools:layout="@layout/fragment_duyurular_admin" />
+    <fragment
+        android:id="@+id/arenaFragment"
+        android:name="com.pakachu.apaydinfitness.ArenaFragment"
+        android:label="fragment_arena"
+        tools:layout="@layout/fragment_arena" />
 </navigation>

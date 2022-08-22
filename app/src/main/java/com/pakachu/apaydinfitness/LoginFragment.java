@@ -46,9 +46,9 @@ public class LoginFragment extends Fragment {
         dbLogin = new DBLogin(getActivity());
         Cursor cursor = dbLogin.getData();
         if (cursor.getCount() == 0) {
-            dbLogin.addData("apaydin2017", 2177, 0, 0, 100,1000);
-            dbLogin.addData("testantrenor", 4166, 0, 0, 51,100);
-            dbLogin.addData("test", 1234, 0, 0, 0,0);
+            dbLogin.addData("apaydin2017", 2177, 0, 0, 100, 0);
+            dbLogin.addData("testantrenor", 4166, 0, 0, 51, 0);
+            dbLogin.addData("test", 1234, 0, 0, 0, 0);
         }
 
         binding.button5.setOnClickListener(v -> binding.editTextTextPersonName3.setText(binding.editTextTextPersonName3.getText().toString() + binding.button5.getText().toString()));
@@ -129,8 +129,8 @@ public class LoginFragment extends Fragment {
             public void onClick(View v) {
                 if (binding.button4.getTag().equals("0")) {
                     String info = "";
-                    MyCustomDialog myCustomDialog=new MyCustomDialog(getActivity());
-                    myCustomDialog.setButtons("Oluştur","İptal");
+                    MyCustomDialog myCustomDialog = new MyCustomDialog(getActivity());
+                    myCustomDialog.setButtons("Oluştur", "İptal");
                     myCustomDialog.setContent("Giriş için onay almadınız.\n\nYeni kayıt oluşturmak ister misiniz?");
                     myCustomDialog.positive.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -162,7 +162,7 @@ public class LoginFragment extends Fragment {
                         if (!pass.equals("")) {
                             if (pass.length() == 4) {
                                 dbLogin.deleteData("login");
-                                dbLogin.addData(id, Integer.valueOf(pass), 0, 0, 0,0);
+                                dbLogin.addData(id, Integer.valueOf(pass), 0, 0, 0, 0);
                                 new MyCustomDialog(getActivity()).Toast("Kullanıcı başarıyla oluşturuldu.");
                                 binding.button4.setTag("0");
                                 binding.editTextTextPersonName2.setTag("0");
@@ -192,13 +192,16 @@ public class LoginFragment extends Fragment {
                     }
 
 
-                }
-                else if (binding.button4.getTag().equals("2")) {
+                } else if (binding.button4.getTag().equals("2")) {
+                    dbLogin.executeSQL("UPDATE login SET remember=0");
+                    dbLogin.executeSQL("UPDATE login SET easylogin=0");
+                    dbLogin.executeSQL("UPDATE login SET logged=0");
                     if (binding.toggleButton.isChecked())
-                        dbLogin.executeSQL("UPDATE login SET remember=1");
+                        dbLogin.executeSQL("UPDATE login SET remember=1 WHERE username='" + id + "'");
                     if (binding.toggleButton2.isChecked())
-                        dbLogin.executeSQL("UPDATE login SET easylogin=1");
+                        dbLogin.executeSQL("UPDATE login SET easylogin=1 WHERE username='" + id + "'");
                     NavHostFragment.findNavController(LoginFragment.this).navigate(R.id.mainFragment);
+                    dbLogin.executeSQL("UPDATE login SET logged=1 WHERE username='" + id + "'");
                     DBLogin.loggedIn = true;
                 }
 
@@ -227,8 +230,7 @@ public class LoginFragment extends Fragment {
                 if (isChecked) {
                     binding.toggleButton.setChecked(true);
                     buttonView.setTextColor(Color.GREEN);
-                }
-                else {
+                } else {
                     buttonView.setTextColor(Color.RED);
                     dbLogin.executeSQL("UPDATE login SET easylogin=0");
                 }
@@ -237,7 +239,9 @@ public class LoginFragment extends Fragment {
         });
 
         if (cursor.getCount() != 0) {
-            cursor = dbLogin.getData();
+            cursor = dbLogin.getData("SELECT * FROM login WHERE remember=1");
+            if(cursor.getCount()==0)
+                cursor = dbLogin.getData();
             cursor.moveToFirst();
             int remember;
             int easylogin;
@@ -259,7 +263,7 @@ public class LoginFragment extends Fragment {
         binding.checkBox2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked)
+                if (isChecked)
                     ((InputMethodManager) getContext().getSystemService(Activity.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(view.getWindowToken(), 0);
             }
         });

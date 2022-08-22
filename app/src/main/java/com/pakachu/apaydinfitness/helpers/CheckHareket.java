@@ -29,6 +29,8 @@ public class CheckHareket {
             case "cable crossover": assetLocation="icon/cablecrossover.png"; break;
             case "machine fly": assetLocation="icon/machinefly.png"; break;
             case "dumbell fly": assetLocation="icon/dumbellfly.png"; break;
+            case "incline bench press": assetLocation="icon/inclinebenchpress.png"; break;
+            case "decline bench press": assetLocation="icon/declinebenchpress.png"; break;
 
            //ÖN KOL HAREKETLERİ
             case "bicep curl": assetLocation="icon/bicepcurl.png"; break;
@@ -43,12 +45,17 @@ public class CheckHareket {
             case "seated cable row": assetLocation="icon/seatedcablerow.png"; break;
             case "hyperextension": assetLocation="icon/hyperextension.png"; break;
             case "dumbell row": assetLocation="icon/dumbellrow.png"; break;
+            case "barbell row": assetLocation="icon/barbellrow.png"; break;
+            case "rope pulldown": assetLocation="icon/ropepulldown.png"; break;
 
             //ARKA KOL HAREKETLERİ
             case "dumbell skullcrusher": assetLocation="icon/dumbellskullcrusher.png"; break;
             case "close grip bench press": assetLocation="icon/closegripbench.png"; break;
             case "rope pushdown": assetLocation="icon/ropepushdown.png"; break;
             case "cable pushdown": assetLocation="icon/cablepushdown.png"; break;
+            case "tricep dumbell extension": assetLocation="icon/tricepdumbellextension.png"; break;
+            case "dumbell kickback": assetLocation="icon/dumbellkickback.png"; break;
+            case "reverse dips": assetLocation="icon/reversedips.png"; break;
 
             //BACAK HAREKETLERİ
             case "lunge": assetLocation="icon/lunge.png"; break;

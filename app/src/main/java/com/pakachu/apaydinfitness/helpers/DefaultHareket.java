@@ -20,6 +20,8 @@ public class DefaultHareket {
         dbIdman.addDataToHareketTable("cable crossover", "Göğüs");
         dbIdman.addDataToHareketTable("machine fly", "Göğüs");
         dbIdman.addDataToHareketTable("dumbell fly", "Göğüs");
+        dbIdman.addDataToHareketTable("incline bench press", "Göğüs");
+        dbIdman.addDataToHareketTable("decline bench press", "Göğüs");
     }
 
     public void Sırt() {
@@ -29,7 +31,8 @@ public class DefaultHareket {
         dbIdman.addDataToHareketTable("lat pull", "Sırt");
         dbIdman.addDataToHareketTable("seated cable row", "Sırt");
         dbIdman.addDataToHareketTable("hyperextension", "Sırt");
-
+        dbIdman.addDataToHareketTable("barbell row", "Sırt");
+        dbIdman.addDataToHareketTable("rope pulldown", "Sırt");
     }
 
     public void OnKol() {
@@ -44,6 +47,9 @@ public class DefaultHareket {
         dbIdman.addDataToHareketTable("close grip bench press", "Arka Kol");
         dbIdman.addDataToHareketTable("rope pushdown", "Arka Kol");
         dbIdman.addDataToHareketTable("cable pushdown", "Arka Kol");
+        dbIdman.addDataToHareketTable("tricep dumbell extension", "Arka Kol");
+        dbIdman.addDataToHareketTable("dumbell kickback", "Arka Kol");
+        dbIdman.addDataToHareketTable("reverse dips", "Arka Kol");
     }
 
     public void Bacak() {

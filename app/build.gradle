@@ -9,8 +9,8 @@ android {
         applicationId "com.pakachu.apaydinfitness"
         minSdk 24
         targetSdk 32
-        versionCode 7
-        versionName "FannyMagnet"
+        versionCode 8
+        versionName "KasAdam"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

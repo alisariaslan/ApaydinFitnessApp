@@ -31,6 +31,7 @@
         <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/fragment_antrenman_olustur.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/fragment_antrenman_tam_ekran.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/fragment_antrenor_menu.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/fragment_arena.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/fragment_duyurular.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/fragment_duyurular_admin.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/fragment_first.xml" value="0.4025670945157526" />
@@ -50,6 +51,8 @@
         <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/list_onizlee.xml" value="0.14749893116716545" />
         <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/list_onizleprogram.xml" value="0.14749893116716545" />
         <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/list_program.xml" value="0.14749893116716545" />
+        <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/list_rekoritem.xml" value="0.4" />
+        <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/menu/menu_main.xml" value="0.4" />
         <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/xml/mybutton.xml" value="0.20863616930312098" />

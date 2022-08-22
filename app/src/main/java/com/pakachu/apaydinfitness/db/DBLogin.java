@@ -17,10 +17,10 @@ public class DBLogin extends SQLiteOpenHelper {
     private final String COL4 = "remember";
     private final String COL5 = "easylogin";
     private final String COL6 = "clearence";
-    private final String COL7 = "gameslevel";
+    private final String COL7 = "logged";
 
     public DBLogin(Context context) {
-        super(context, TABLENAME, null, 1);
+        super(context, TABLENAME, null, 2);
     }
     //INTEGER
     //TEXT
@@ -33,7 +33,7 @@ public class DBLogin extends SQLiteOpenHelper {
                 COL4 + " INTEGER," +
                 COL5 + " INTEGER," +
                 COL6 + " INTEGER," +
-                COL7 + " FLOAT)";
+                COL7 + " INTEGER)";
         db.execSQL(createTable);
 
     }
@@ -43,7 +43,7 @@ public class DBLogin extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLENAME);
         onCreate(db);
     }
-    public void addData(String id,int pin,int remember,int easylogin,int clearence,float gamesLevel) {
+    public void addData(String id,int pin,int remember,int easylogin,int clearence,int logged) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL2, id);
@@ -51,7 +51,7 @@ public class DBLogin extends SQLiteOpenHelper {
         contentValues.put(COL4, remember);
         contentValues.put(COL5, easylogin);
         contentValues.put(COL6, clearence);
-        contentValues.put(COL7, gamesLevel);
+        contentValues.put(COL7, logged);
         db.insert(TABLENAME, null, contentValues);
     }
 
@@ -64,7 +64,7 @@ public class DBLogin extends SQLiteOpenHelper {
 
     public int getClearenceLevel() {
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM " + TABLENAME;
+        String query = "SELECT * FROM " + TABLENAME + " WHERE logged=1";
         Cursor data = db.rawQuery(query, null);
         data.moveToFirst();
         return data.getInt(5);
