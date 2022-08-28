@@ -26,5 +26,25 @@
 
     <style name="Theme.ApaydinFitness.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="Theme.ApaydinFitness.Child" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+
+    </style>
+
+    <style name="Theme.ApaydinFitness.Card" parent="Theme.MaterialComponents.DayNight">
+
+    </style>
+
+    <style name="Theme.ApaydinFitness.Detay" parent="Theme.MaterialComponents.DayNight">
+
+    </style>
+
+    <style name="Theme.ApaydinFitness.InCard" parent="Theme.MaterialComponents.DayNight">
+
+    </style>
+
+    <style name="Theme.ApaydinFitness.OnizleHareket" parent="Theme.MaterialComponents.DayNight">
+
+    </style>
+
 
 </resources>

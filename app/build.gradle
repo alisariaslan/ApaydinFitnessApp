@@ -9,9 +9,8 @@ android {
         applicationId "com.pakachu.apaydinfitness"
         minSdk 24
         targetSdk 32
-        versionCode 8
-        versionName "KasAdam"
-
+        versionCode 9
+        versionName "BarFix"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 

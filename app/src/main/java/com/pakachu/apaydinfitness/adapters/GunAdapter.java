@@ -52,9 +52,9 @@ public class GunAdapter extends RecyclerView.Adapter<GunAdapter.ViewHolder> {
                 hasData = true;
         }
         Drawable img1, img2, img3;
-        img1 = ResourcesCompat.getDrawable(activity.getResources(), R.drawable.dropdown, null);
-        img2 = ResourcesCompat.getDrawable(activity.getResources(), R.drawable.dropdownup, null);
-        img3 = ResourcesCompat.getDrawable(activity.getResources(), R.drawable.empty, null);
+        img1 = ResourcesCompat.getDrawable(activity.getResources(), R.drawable.dropdown_icon, null);
+        img2 = ResourcesCompat.getDrawable(activity.getResources(), R.drawable.dropdown_up_icon, null);
+        img3 = ResourcesCompat.getDrawable(activity.getResources(), R.drawable.empty_icon, null);
         img1.setBounds(0, 0, 50, 50);
         img2.setBounds(0, 0, 50, 50);
         img3.setBounds(0, 0, 50, 50);

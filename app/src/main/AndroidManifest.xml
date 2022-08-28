@@ -4,9 +4,8 @@
     package="com.pakachu.apaydinfitness">
 
     <application
-        android:configChanges = "orientation"
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
+        android:configChanges="orientation"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
@@ -14,22 +13,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ApaydinFitness"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".games.xox.XoX"
+            android:exported="false" />
+        <activity
+            android:name=".games.gapway.GamesActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
+            android:label="Apaydın Fitness"
             android:theme="@style/Theme.ApaydinFitness.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="@string/id"/>
+            android:value="@string/id" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
+
 </manifest>

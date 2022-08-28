@@ -174,10 +174,8 @@ public class MainFragment extends Fragment {
 
                     @Override
                     public void onFinish() {
-                        new MyCustomDialog(getActivity()).Toast("Bu bölüm henüz aktif değil");
-                        binding.btnGames.clearAnimation();
-
-                        Unlocked();
+                        NavHostFragment.findNavController(MainFragment.this)
+                                .navigate(R.id.action_mainFragment_to_gamesFragment);
                     }
                 }.start();
             }

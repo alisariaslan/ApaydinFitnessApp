@@ -1,0 +1,8 @@
+package com.pakachu.apaydinfitness.games.gapway;
+
+import android.graphics.Canvas;
+
+public interface GameObject {
+    public void draw(Canvas canvas);
+    public void update();
+}

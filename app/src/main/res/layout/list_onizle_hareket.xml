@@ -38,8 +38,7 @@
                     android:id="@+id/imageView15"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:padding="10dp"
-                    app:srcCompat="@drawable/testicon" />
+                    android:padding="10dp" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>

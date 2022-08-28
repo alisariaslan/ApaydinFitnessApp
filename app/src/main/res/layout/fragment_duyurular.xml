@@ -13,7 +13,7 @@
         android:layout_marginEnd="10dp"
         android:background="#FFFFFF"
         android:clickable="true"
-        android:src="@drawable/adminkey"
+        android:src="@drawable/admin_key_icon"
         android:visibility="gone"
         app:backgroundTint="#FFEB3B"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -86,7 +86,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
                         android:alpha=".25"
-                        android:src="@drawable/thumbsup"
+                        android:src="@drawable/thumbs_up"
                         android:visibility="gone" />
 
                     <androidx.recyclerview.widget.RecyclerView

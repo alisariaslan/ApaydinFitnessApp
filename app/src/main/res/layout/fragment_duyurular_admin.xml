@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DuyurularAdmin">
+    tools:context=".admin.DuyurularAdmin">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -65,7 +65,6 @@
                             android:layout_marginStart="10dp"
                             android:layout_marginEnd="10dp"
                             android:paddingBottom="10dp"
-                            app:cardBackgroundColor="@color/textFrontOfYellow"
                             app:cardCornerRadius="50dp"
                             app:contentPaddingBottom="15dp">
 
@@ -82,7 +81,6 @@
                                     android:fontFamily="@font/audiowide"
                                     android:gravity="center"
                                     android:text="Duyuru Oluştur"
-                                    android:textColor="#D1D1D1"
                                     android:textSize="20sp"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
@@ -97,8 +95,7 @@
                                     android:layout_marginEnd="20dp"
                                     android:fontFamily="@font/audiowide"
                                     android:text="Yayınladığınız duyuru kullanıcı eğer sistemdeyse en geç 5 dakika içerisinde kullanıcıya ulaşır!"
-                                    android:textAlignment="center"
-                                    android:textColor="@color/white" />
+                                    android:textAlignment="center" />
 
                                 <ProgressBar
                                     android:id="@+id/progressBar5"
@@ -114,15 +111,13 @@
                                     android:layout_height="wrap_content"
                                     android:ems="10"
                                     android:fontFamily="@font/allerta"
-                                    android:gravity="center|top"
+                                    android:gravity="start|top"
                                     android:hint="Duyurunuzu yazın"
                                     android:inputType="none|textMultiLine"
                                     android:minLines="2"
                                     android:paddingStart="10dp"
                                     android:paddingTop="30dp"
-                                    android:paddingEnd="10dp"
-                                    android:textColor="#D1D1D1"
-                                    android:textColorHint="#6E6E6E" />
+                                    android:paddingEnd="10dp" />
 
                                 <TableRow
                                     android:layout_width="match_parent"
@@ -135,7 +130,7 @@
                                         android:layout_margin="10dp"
                                         android:layout_weight="1"
                                         android:backgroundTint="@color/cardBackground"
-                                        android:drawableTop="@drawable/copy"
+                                        android:drawableTop="@drawable/copy_icon"
                                         android:fontFamily="@font/audiowide"
                                         android:minLines="2"
                                         android:text="Kopyala"
@@ -150,7 +145,7 @@
                                         android:layout_margin="10dp"
                                         android:layout_weight="1"
                                         android:backgroundTint="@color/cardBackground"
-                                        android:drawableTop="@drawable/paste"
+                                        android:drawableTop="@drawable/paste_icon"
                                         android:fontFamily="@font/audiowide"
                                         android:minLines="2"
                                         android:text="Yapıştır"
@@ -172,7 +167,7 @@
                                         android:layout_margin="10dp"
                                         android:layout_weight="1"
                                         android:backgroundTint="@color/cardBackground"
-                                        android:drawableTop="@drawable/publish"
+                                        android:drawableTop="@drawable/publish_icon"
                                         android:fontFamily="@font/audiowide"
                                         android:minLines="2"
                                         android:text="Yayınla"
@@ -188,7 +183,7 @@
                                         android:layout_margin="10dp"
                                         android:layout_weight="1"
                                         android:backgroundTint="@color/cardBackground"
-                                        android:drawableTop="@drawable/clear"
+                                        android:drawableTop="@drawable/clear_icon"
                                         android:fontFamily="@font/audiowide"
                                         android:minLines="2"
                                         android:text="Temizle"
@@ -209,7 +204,6 @@
                             android:layout_marginTop="15dp"
                             android:layout_marginEnd="10dp"
                             android:paddingBottom="10dp"
-                            app:cardBackgroundColor="@color/textFrontOfYellow"
                             app:cardCornerRadius="50dp"
                             app:contentPaddingBottom="15dp">
 
@@ -227,7 +221,6 @@
                                     android:fontFamily="@font/audiowide"
                                     android:gravity="center"
                                     android:text="Son Yayınlanan Duyuru"
-                                    android:textColor="#D1D1D1"
                                     android:textSize="20sp"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
@@ -250,8 +243,7 @@
                                     android:layout_marginEnd="20dp"
                                     android:layout_marginBottom="10dp"
                                     android:fontFamily="@font/allerta"
-                                    android:textAlignment="center"
-                                    android:textColor="@color/white" />
+                                    android:text="Blablabla" />
 
                             </LinearLayout>
 
@@ -265,7 +257,6 @@
                             android:layout_marginTop="15dp"
                             android:layout_marginEnd="10dp"
                             android:paddingBottom="10dp"
-                            app:cardBackgroundColor="@color/textFrontOfYellow"
                             app:cardCornerRadius="50dp"
                             app:contentPaddingBottom="15dp">
 
@@ -282,7 +273,6 @@
                                     android:fontFamily="@font/audiowide"
                                     android:gravity="center"
                                     android:text="Arındır"
-                                    android:textColor="#D1D1D1"
                                     android:textSize="20sp"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
@@ -305,8 +295,7 @@
                                     android:layout_marginEnd="20dp"
                                     android:fontFamily="@font/audiowide"
                                     android:text="Yerel ve Uzak Veritabanlarını temizler"
-                                    android:textAlignment="center"
-                                    android:textColor="@color/white" />
+                                    android:textAlignment="center" />
 
                                 <Button
                                     android:id="@+id/button19"
@@ -315,7 +304,7 @@
                                     android:layout_margin="10dp"
                                     android:layout_weight="1"
                                     android:backgroundTint="@color/cardBackground"
-                                    android:drawableTop="@drawable/baslat"
+                                    android:drawableTop="@drawable/start_icon"
                                     android:fontFamily="@font/audiowide"
                                     android:minLines="2"
                                     android:text="Başlat"

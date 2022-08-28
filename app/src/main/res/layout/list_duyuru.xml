@@ -8,12 +8,13 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView35"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="15dp"
+        android:layout_marginEnd="30dp"
         android:paddingBottom="10dp"
-        app:cardBackgroundColor="@color/textFrontOfYellow"
-        app:cardCornerRadius="50dp"
+        app:cardCornerRadius="15dp"
         app:contentPaddingBottom="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,18 +34,14 @@
                 android:layout_marginEnd="15dp"
                 android:fontFamily="@font/allerta"
                 android:text="🟡 Uygulama henüz yapım aşamasında olduğu için bazı bölümler eksiktir. Eksik olan bölümlerin hepsi tamamlanacak olup ilerleyen zamanlarda uygulamaya entegre edilecektir. Anlayışınız için teşekkür ederiz. İyi idmanlar!"
-                android:textAlignment="center"
-                android:textColor="#D1D1D1"
                 android:textSize="16sp" />
 
             <Button
                 android:id="@+id/button12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginEnd="30dp"
                 android:backgroundTint="@color/cardBackground"
                 android:fontFamily="@font/audiowide"
                 android:text="Okundu olarak işaretle"

@@ -91,9 +91,9 @@ public class OlculerimFragment extends Fragment {
         binding.textView5.setTextAlignment(View.TEXT_ALIGNMENT_VIEW_START);
         binding.imageView.setVisibility(View.VISIBLE);
         if (cinsiyet.toUpperCase(Locale.ROOT).equals("ERKEK"))
-            binding.imageView.setImageResource(R.drawable.fitman);
+            binding.imageView.setImageResource(R.drawable.fit_man);
         else if (cinsiyet.toUpperCase(Locale.ROOT).equals("KADIN"))
-            binding.imageView.setImageResource(R.drawable.fitgirl);
+            binding.imageView.setImageResource(R.drawable.fit_girl);
         else {
             binding.imageView.setVisibility(View.GONE);
             binding.textView5.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);

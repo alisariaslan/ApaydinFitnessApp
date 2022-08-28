@@ -26,8 +26,10 @@ import com.pakachu.apaydinfitness.databinding.FragmentLoginBinding;
 import com.pakachu.apaydinfitness.db.DBLogin;
 
 public class LoginFragment extends Fragment {
-    FragmentLoginBinding binding;
+    private FragmentLoginBinding binding;
     private DBLogin dbLogin;
+    private boolean okudumVeKabulEdiyorum = false;
+    private String id = "", pass = "";
 
     @Override
     public View onCreateView(
@@ -35,10 +37,9 @@ public class LoginFragment extends Fragment {
             Bundle savedInstanceState
     ) {
         binding = FragmentLoginBinding.inflate(inflater, container, false);
+
         return binding.getRoot();
     }
-
-    String id = "", pass = "";
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -86,7 +87,6 @@ public class LoginFragment extends Fragment {
                         binding.checkBox2.setChecked(true);
                     }
                 }
-
             }
         });
 
@@ -161,26 +161,64 @@ public class LoginFragment extends Fragment {
                     if (!id.equals("")) {
                         if (!pass.equals("")) {
                             if (pass.length() == 4) {
-                                dbLogin.deleteData("login");
-                                dbLogin.addData(id, Integer.valueOf(pass), 0, 0, 0, 0);
-                                new MyCustomDialog(getActivity()).Toast("Kullanıcı başarıyla oluşturuldu.");
-                                binding.button4.setTag("0");
-                                binding.editTextTextPersonName2.setTag("0");
-                                binding.editTextTextPersonName3.setTag("0");
+                                if(!okudumVeKabulEdiyorum) {
+                                    MyCustomDialog myCustomDialog =new MyCustomDialog(getActivity());
+                                    myCustomDialog.setButtons("Kabul Ediyorum","İptal");
+                                    myCustomDialog.setCaption("Gizlilik Politikası");
+                                    myCustomDialog.setContent("Apaydın Fitness gizlilik politikası, verilerinizin nasıl kullanıldığını ve\n" +
+                                            "uygulamamızı kullandığınızda bize sağladığınız verileri korur.\n" +
+                                            "Bu politikayı herhangi bir zamanda değiştirme hakkımız saklıdır.\n" +
+                                            "Hangi Kullanıcı Verilerini Topluyoruz:\n" +
+                                            "• Adınız, soyadınız, yaşınız, kilonuz, boyunuz.\n" +
+                                            "• Vücut ölçüleriniz.\n" +
+                                            "Verilerinizi Neden Topluyoruz:\n" +
+                                            "• İhtiyaçlarınızı daha iyi anlamak için.\n" +
+                                            "• Hizmetlerimizi ve ürünlerimizi geliştirmek.\n" +
+                                            "Verilerin Korunması ve Güvenliğinin Sağlanması\n" +
+                                            "Apaydın Fitness, verilerinizi güvence altına almayı ve gizli tutmayı taahhüt eder.\n" +
+                                            "Apaydın Fitness, veri hırsızlığını, yetkisiz erişimi engellemek için elinden geleni yapıyor.\n" +
+                                            "Apaydın Fitness en son teknolojileri kullanır.\n" + "\n" +
+                                            "Bu gizlilik politikasını okudum ve kabul ediyorum.");
+                                    myCustomDialog.positive.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            okudumVeKabulEdiyorum=true;
+                                            myCustomDialog.dissmiss();
+                                            binding.editTextTextPersonName2.setEnabled(false);
+                                            binding.editTextTextPersonName3.setEnabled(false);
+                                        }
+                                    });
+                                    myCustomDialog.negative.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            okudumVeKabulEdiyorum=false;
+                                            myCustomDialog.dissmiss();
+                                        }
+                                    });
+                                    myCustomDialog.show(true);
+                                } else {
+                                    okudumVeKabulEdiyorum = false;
+                                    binding.editTextTextPersonName2.setEnabled(true);
+                                    binding.editTextTextPersonName3.setEnabled(true);
+                                    dbLogin.deleteData("login");
+                                    dbLogin.addData(id, Integer.valueOf(pass), 0, 0, 0, 0);
+                                    new MyCustomDialog(getActivity()).Toast("Kullanıcı başarıyla oluşturuldu.");
+                                    binding.button4.setTag("0");
+                                    binding.editTextTextPersonName2.setTag("0");
+                                    binding.editTextTextPersonName3.setTag("0");
 
-                                binding.checkBox2.setVisibility(View.VISIBLE);
-                                binding.checkBox3.setVisibility(View.VISIBLE);
+                                    binding.checkBox2.setVisibility(View.VISIBLE);
+                                    binding.checkBox3.setVisibility(View.VISIBLE);
 
-                                binding.toggleButton.setVisibility(View.VISIBLE);
-                                binding.toggleButton2.setVisibility(View.VISIBLE);
+                                    binding.toggleButton.setVisibility(View.VISIBLE);
+                                    binding.toggleButton2.setVisibility(View.VISIBLE);
 
-                                binding.editTextTextPersonName2.setText("");
-                                binding.textView13.setText("Kullanıcı Giriş");
-                                binding.button4.setText("Giriş Yap / Kayıt Ol");
+                                    binding.editTextTextPersonName2.setText("");
+                                    binding.textView13.setText("Kullanıcı Giriş");
+                                    binding.button4.setText("Giriş Yap / Kayıt Ol");
 
-                                binding.cardView4.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.bounce));
-
-
+                                    binding.cardView4.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.bounce));
+                                }
                             } else {
                                 new MyCustomDialog(getActivity()).Toast("Hata! Şifreniz 4 karakter uzunluğunda değil");
                             }
@@ -190,8 +228,6 @@ public class LoginFragment extends Fragment {
                     } else {
                         new MyCustomDialog(getActivity()).Toast("Hata! Kullanıcı adını boş bırakamazsınız");
                     }
-
-
                 } else if (binding.button4.getTag().equals("2")) {
                     dbLogin.executeSQL("UPDATE login SET remember=0");
                     dbLogin.executeSQL("UPDATE login SET easylogin=0");
@@ -204,8 +240,6 @@ public class LoginFragment extends Fragment {
                     dbLogin.executeSQL("UPDATE login SET logged=1 WHERE username='" + id + "'");
                     DBLogin.loggedIn = true;
                 }
-
-
             }
         });
 

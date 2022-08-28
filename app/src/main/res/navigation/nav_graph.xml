@@ -39,6 +39,9 @@
         <action
             android:id="@+id/action_mainFragment_to_arenaFragment"
             app:destination="@id/arenaFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_gamesFragment"
+            app:destination="@id/gamesFragment" />
     </fragment>
     <fragment
         android:id="@+id/olculerimFragment"
@@ -95,7 +98,7 @@
         tools:layout="@layout/fragment_saatler" />
     <fragment
         android:id="@+id/antrenorMenu"
-        android:name="com.pakachu.apaydinfitness.AntrenorMenu"
+        android:name="com.pakachu.apaydinfitness.admin.AntrenorMenu"
         android:label="fragment_antrenor_menu"
         tools:layout="@layout/fragment_antrenor_menu" />
     <fragment
@@ -105,7 +108,7 @@
         tools:layout="@layout/fragment_antrenman_tam_ekran" />
     <fragment
         android:id="@+id/duyurularAdmin"
-        android:name="com.pakachu.apaydinfitness.DuyurularAdmin"
+        android:name="com.pakachu.apaydinfitness.admin.DuyurularAdmin"
         android:label="fragment_duyurular_admin"
         tools:layout="@layout/fragment_duyurular_admin" />
     <fragment
@@ -113,4 +116,9 @@
         android:name="com.pakachu.apaydinfitness.ArenaFragment"
         android:label="fragment_arena"
         tools:layout="@layout/fragment_arena" />
+    <fragment
+        android:id="@+id/gamesFragment"
+        android:name="com.pakachu.apaydinfitness.GamesFragment"
+        android:label="fragment_games"
+        tools:layout="@layout/fragment_games" />
 </navigation>

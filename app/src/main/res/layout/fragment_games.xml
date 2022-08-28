@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GamesFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:minHeight="880dp"
+                android:theme="@style/Theme.ApaydinFitness.Card"
+                app:cardBackgroundColor="#B3121000"
+                app:cardCornerRadius="50dp"
+                app:contentPaddingBottom="30dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textViewBaslik"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/audiowide"
+                        android:text="Oyunlar 🕹"
+                        android:textAlignment="center"
+                        android:textColor="#D1D1D1"
+                        android:textSize="20sp" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_coin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="50dp"
+                            android:drawableLeft="@drawable/coin_icon"
+                            android:drawablePadding="15dp"
+                            android:fontFamily="@font/audiowide"
+                            android:gravity="center_vertical"
+                            android:padding="5dp"
+                            android:text="Coin:"
+                            android:textColor="#EEE"
+                            android:textSize="20sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_ap"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="50dp"
+                            android:drawableLeft="@drawable/ap_icon"
+                            android:drawablePadding="15dp"
+                            android:fontFamily="@font/audiowide"
+                            android:gravity="center_vertical"
+                            android:padding="5dp"
+                            android:text="AP:"
+                            android:textColor="#EEE"
+                            android:textSize="20sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_coin" />
+
+                        <Button
+                            android:id="@+id/btn_coin_to_ap"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="50dp"
+                            android:background="#00000000"
+                            android:fontFamily="@font/press_start_2p"
+                            android:paddingTop="10dp"
+                            android:shadowColor="#000000"
+                            android:shadowRadius="15"
+                            android:text="Çevir "
+                            android:textColor="#EEE"
+                            android:textSize="16sp"
+                            android:visibility="gone"
+                            app:cornerRadius="50dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_ap"
+                            tools:visibility="visible" />
+
+                        <pl.droidsonroids.gif.GifImageView
+                            android:id="@+id/gif_coin"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="50dp"
+                            android:src="@drawable/coin_turn"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/tv_ishavecoin"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/audiowide"
+                            android:gravity="center_vertical"
+                            android:padding="15dp"
+                            android:shadowColor="#000000"
+                            android:shadowRadius="15"
+                            android:text="Üzerinizde coin bulunmamaktadır. Coinleri oyun oynayarak kazanabilirsiniz."
+                            android:textColor="#EEE"
+                            android:textSize="14sp"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/btn_coin_to_ap"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/audiowide"
+                            android:gravity="center_vertical"
+                            android:padding="15dp"
+                            android:shadowColor="#000000"
+                            android:shadowRadius="15"
+                            android:text="Coin ve Ap lerin şuan için herhangi bir işlevi yoktur."
+                            android:textColor="#EEE"
+                            android:textSize="14sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_ishavecoin" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:theme="@style/Theme.ApaydinFitness.Card"
+                        app:cardBackgroundColor="#000000"
+                        app:cardCornerRadius="50dp">
+
+                        <ImageView
+                            android:id="@+id/imgview"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp"
+                            android:contentDescription="TODO"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/xox_game" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/textViewBaslik6"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/background_wood"
+                                android:fontFamily="@font/audiowide"
+                                android:padding="5dp"
+                                android:text="XoX"
+                                android:textAlignment="center"
+                                android:textColor="#EEE"
+                                android:textSize="20sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="150dp"
+                                android:layout_height="75dp"
+                                android:layout_marginBottom="15dp"
+                                app:cardCornerRadius="50dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent">
+
+                                <ImageView
+                                    android:id="@+id/imageView22"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/background_wood_square" />
+
+                                <Button
+                                    android:id="@+id/button23"
+                                    android:layout_width="150dp"
+                                    android:layout_height="75dp"
+                                    android:layout_gravity="center"
+                                    android:background="#00FFFFFF"
+                                    android:drawableTop="@android:drawable/ic_media_play"
+                                    android:fontFamily="@font/press_start_2p"
+                                    android:paddingStart="30dp"
+                                    android:paddingEnd="30dp"
+                                    android:shadowColor="#FFFFFF"
+                                    android:shadowRadius="15"
+                                    android:text="Başlat"
+                                    android:textColor="#EEE"
+                                    android:textSize="12sp" />
+                            </androidx.cardview.widget.CardView>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

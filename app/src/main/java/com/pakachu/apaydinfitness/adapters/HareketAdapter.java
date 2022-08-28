@@ -114,7 +114,7 @@ public class HareketAdapter extends RecyclerView.Adapter<HareketAdapter.ViewHold
                     holder.btn_hareket.setEnabled(false);
                     holder.tv_complete.setVisibility(View.VISIBLE);
                     holder.tv_complete.startAnimation(AnimationUtils.loadAnimation(activity, R.anim.fadein));
-                    holder.iv_checked.setImageResource(R.drawable.checked2);
+                    holder.iv_checked.setImageResource(R.drawable.checked_icon2);
                     holder.btn_hareket.setText(hareketItem.hareketAdi);
                     holder.btn_hareket.startAnimation(AnimationUtils.loadAnimation(activity, R.anim.fadeout));
                     holder.iv_info.startAnimation(AnimationUtils.loadAnimation(activity, R.anim.fadeout));
@@ -123,7 +123,7 @@ public class HareketAdapter extends RecyclerView.Adapter<HareketAdapter.ViewHold
                     holder.iv_info.setTag("0");
                     holder.iv_info.setEnabled(false);
                     holder.rv_detaylar.setAdapter(null);
-                    holder.iv_info.setImageDrawable(AppCompatResources.getDrawable(activity, R.drawable.info));
+                    holder.iv_info.setImageDrawable(AppCompatResources.getDrawable(activity, R.drawable.info_icon));
                     SayacDurdur(holder, countDownTimer);
                 } else {
                     holder.iv_info.setEnabled(true);
@@ -131,7 +131,7 @@ public class HareketAdapter extends RecyclerView.Adapter<HareketAdapter.ViewHold
                     holder.tv_complete.clearAnimation();
                     holder.tv_complete.setVisibility(View.GONE);
                     holder.tv_complete.startAnimation(AnimationUtils.loadAnimation(activity, R.anim.fadeout));
-                    holder.iv_checked.setImageResource(R.drawable.checked);
+                    holder.iv_checked.setImageResource(R.drawable.checked_icon);
                     holder.btn_hareket.startAnimation(AnimationUtils.loadAnimation(activity, R.anim.fadein));
                     holder.iv_info.startAnimation(AnimationUtils.loadAnimation(activity, R.anim.fadein));
                 }
@@ -177,11 +177,11 @@ public class HareketAdapter extends RecyclerView.Adapter<HareketAdapter.ViewHold
                 if (holder.iv_info.getTag().equals("0")) {
                     holder.iv_info.setTag("1");
                     holder.rv_detaylar.setAdapter(adapterMember);
-                    holder.iv_info.setImageDrawable(AppCompatResources.getDrawable(activity, R.drawable.info2));
+                    holder.iv_info.setImageDrawable(AppCompatResources.getDrawable(activity, R.drawable.info_icon2));
                 } else {
                     holder.iv_info.setTag("0");
                     holder.rv_detaylar.setAdapter(null);
-                    holder.iv_info.setImageDrawable(AppCompatResources.getDrawable(activity, R.drawable.info));
+                    holder.iv_info.setImageDrawable(AppCompatResources.getDrawable(activity, R.drawable.info_icon));
 
                 }
             }
@@ -190,7 +190,7 @@ public class HareketAdapter extends RecyclerView.Adapter<HareketAdapter.ViewHold
 
     void SayacBaslat(ViewHolder holder, CountDownTimer countDownTimer) {
         countDownTimer.start();
-        Drawable icon = AppCompatResources.getDrawable(activity, R.drawable.sayacdurdur);
+        Drawable icon = AppCompatResources.getDrawable(activity, R.drawable.sayac_durdur_icon);
         icon.setBounds(0, 0, 100, 100);
         holder.btn_sureBaslat.setCompoundDrawables(null, icon, null, null);
         holder.btn_sureBaslat.setText("süreyi\ndurdur");
@@ -215,7 +215,7 @@ public class HareketAdapter extends RecyclerView.Adapter<HareketAdapter.ViewHold
         holder.tv_sayac.setText("" + holder.sayac);
         holder.btn_sayacArttir.setVisibility(View.VISIBLE);
         holder.btn_sayacAzalt.setVisibility(View.VISIBLE);
-        Drawable icon = AppCompatResources.getDrawable(activity, R.drawable.alarm2);
+        Drawable icon = AppCompatResources.getDrawable(activity, R.drawable.alarm_icon);
         icon.setBounds(0, 0, 100, 100);
         holder.btn_sureBaslat.setCompoundDrawables(null, icon, null, null);
         holder.btn_sureBaslat.setText("süreyi\nbaşlat");

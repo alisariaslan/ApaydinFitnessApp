@@ -13,7 +13,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
-        android:drawableTop="@drawable/benchpress"
         android:fontFamily="@font/allerta"
         android:gravity="center"
         android:minLines="3"
@@ -39,7 +38,7 @@
         app:layout_constraintBottom_toTopOf="@+id/cl_islev"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/info" />
+        app:srcCompat="@drawable/info_icon" />
 
     <ImageView
         android:id="@+id/iv_checked"
@@ -50,7 +49,7 @@
         app:layout_constraintBottom_toTopOf="@+id/cl_islev"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/checked" />
+        app:srcCompat="@drawable/checked_icon" />
 
     <TextView
         android:id="@+id/tv_complete"
@@ -87,7 +86,7 @@
             android:layout_width="wrap_content"
             android:layout_height="100dp"
             android:layout_marginStart="5dp"
-            android:drawableTop="@drawable/alarm2"
+            android:drawableTop="@drawable/alarm_icon"
             android:fontFamily="@font/allerta"
             android:gravity="center"
             android:tag="0"
@@ -107,7 +106,7 @@
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_marginEnd="10dp"
-            android:drawableLeft="@drawable/plus"
+            android:drawableLeft="@drawable/plus_icon"
             android:fontFamily="@font/allerta"
             android:gravity="center"
             android:tag="0"
@@ -127,7 +126,7 @@
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_marginEnd="10dp"
-            android:drawableLeft="@drawable/minus"
+            android:drawableLeft="@drawable/minus_icon"
             android:fontFamily="@font/allerta"
             android:gravity="center"
             android:tag="0"
@@ -147,7 +146,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:background="@drawable/gradientbutton"
+            android:background="@drawable/gradient_button"
             android:fontFamily="@font/audiowide"
             android:gravity="center"
             android:text="0"
