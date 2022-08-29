@@ -42,6 +42,9 @@
         <action
             android:id="@+id/action_mainFragment_to_gamesFragment"
             app:destination="@id/gamesFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_dietFragment"
+            app:destination="@id/dietFragment" />
     </fragment>
     <fragment
         android:id="@+id/olculerimFragment"
@@ -60,23 +63,12 @@
         <action
             android:id="@+id/action_antrenmanFragment_to_antrenmanOlusturFragment"
             app:destination="@id/antrenmanOlusturFragment" />
-        <action
-            android:id="@+id/action_antrenmanFragment_to_antrenmanAktarFragment"
-            app:destination="@id/antrenmanAktarFragment" />
-        <action
-            android:id="@+id/action_antrenmanFragment_to_antrenmanTamEkran"
-            app:destination="@id/antrenmanTamEkran" />
     </fragment>
     <fragment
         android:id="@+id/antrenmanOlusturFragment"
         android:name="com.pakachu.apaydinfitness.AntrenmanOlusturFragment"
         android:label="fragment_antrenman_olustur"
         tools:layout="@layout/fragment_antrenman_olustur" />
-    <fragment
-        android:id="@+id/antrenmanAktarFragment"
-        android:name="com.pakachu.apaydinfitness.AntrenmanAktarFragment"
-        android:label="fragment_antrenman_aktar"
-        tools:layout="@layout/fragment_antrenman_aktar" />
     <fragment
         android:id="@+id/duyurularFragment"
         android:name="com.pakachu.apaydinfitness.DuyurularFragment"
@@ -102,11 +94,6 @@
         android:label="fragment_antrenor_menu"
         tools:layout="@layout/fragment_antrenor_menu" />
     <fragment
-        android:id="@+id/antrenmanTamEkran"
-        android:name="com.pakachu.apaydinfitness.AntrenmanTamEkran"
-        android:label="fragment_antrenman_tam_ekran"
-        tools:layout="@layout/fragment_antrenman_tam_ekran" />
-    <fragment
         android:id="@+id/duyurularAdmin"
         android:name="com.pakachu.apaydinfitness.admin.DuyurularAdmin"
         android:label="fragment_duyurular_admin"
@@ -120,5 +107,19 @@
         android:id="@+id/gamesFragment"
         android:name="com.pakachu.apaydinfitness.GamesFragment"
         android:label="fragment_games"
-        tools:layout="@layout/fragment_games" />
+        tools:layout="@layout/fragment_games" >
+        <action
+            android:id="@+id/action_gamesFragment_to_XOXFragment"
+            app:destination="@id/XOXFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dietFragment"
+        android:name="com.pakachu.apaydinfitness.DietFragment"
+        android:label="fragment_diet"
+        tools:layout="@layout/fragment_diet" />
+    <fragment
+        android:id="@+id/XOXFragment"
+        android:name="com.pakachu.apaydinfitness.games.xox.XOXFragment"
+        android:label="fragment_x_o_x"
+        tools:layout="@layout/fragment_x_o_x" />
 </navigation>

@@ -2,23 +2,36 @@ package com.pakachu.apaydinfitness.adapters;
 
 import android.app.Activity;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.WriterException;
+import com.journeyapps.barcodescanner.BarcodeEncoder;
+import com.pakachu.apaydinfitness.MyCustomDialog;
 import com.pakachu.apaydinfitness.db.DBIdman;
 import com.pakachu.apaydinfitness.helpers.ImageProcess;
 import com.pakachu.apaydinfitness.R;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ViewHolder> {
 
@@ -48,27 +61,77 @@ public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ViewHold
         Cursor isfullbodyCursor = dbIdman.getData("SELECT * FROM table" + programItem.pos);
         Cursor loadCursor = dbIdman.getDataFromProgramTable();
 
-        ImageProcess imageProcess=new ImageProcess(activity);
+        ImageProcess imageProcess = new ImageProcess(activity);
         Drawable icon;
-        if(isFullBody(isfullbodyCursor)) {
-            icon = imageProcess.GetDrawableFromAssets("icon/fullbody.png",true);
+        if (isFullBody(isfullbodyCursor)) {
+            icon = imageProcess.GetDrawableFromAssets("icon/fullbody.png", true);
         } else {
-            icon = imageProcess.GetDrawableFromAssets("icon/split.png",true);
+            icon = imageProcess.GetDrawableFromAssets("icon/split.png", true);
         }
         icon.setBounds(0, 0, 150, 150);
         holder.btn_program.setCompoundDrawables(icon, null, null, null);
 
         if (autoLoad)
-            Load(loadCursor,programItem, holder);
+            Load(loadCursor, programItem, holder);
         else
             holder.btn_program.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     if (holder.btn_program.getTag().equals("0")) {
-                        Load(loadCursor,programItem, holder);
+                        Load(loadCursor, programItem, holder);
                     } else UnLoad(holder);
                 }
             });
+
+        holder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MyCustomDialog myCustomDialog = new MyCustomDialog(activity);
+                myCustomDialog.setCaption("QR ile Aktar");
+
+                String tableName = programItem.programAdi;
+                int tableIndex = programItem.pos;
+
+                DBIdman dbIdman = new DBIdman(activity);
+                Cursor cursor = dbIdman.getDataFromProgramTable();
+
+                cursor.moveToFirst();
+                cursor.move(tableIndex);
+                String[] gunler = cursor.getString(2).split("\n");
+                JSONObject jsonObject = new JSONObject();
+                try {
+                    jsonObject.put("Tablo", tableName);
+                    JSONObject jsonObject2 = new JSONObject();
+                    int i = 0;
+                    for (String string : gunler
+                    ) {
+                        JSONArray jsonArray = new JSONArray();
+                        Cursor cursor1 = dbIdman.getData("SELECT column" + i + " FROM table" + tableIndex);
+                        while (cursor1.moveToNext()) {
+                            if (cursor1.getString(0) != null)
+                                jsonArray.put(cursor1.getString(0));
+                        }
+                        jsonObject2.put(string, jsonArray);
+                        i++;
+                    }
+                    jsonObject.put("Günler", jsonObject2);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                String qrString = jsonObject.toString();
+
+                BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
+                Bitmap bitmap = null;
+                try {
+                    bitmap = barcodeEncoder.encodeBitmap(qrString, BarcodeFormat.QR_CODE, 400, 400);
+                } catch (WriterException e) {
+                    e.printStackTrace();
+                }
+                myCustomDialog.setImage(bitmap);
+                myCustomDialog.show(false);
+
+            }
+        });
     }
 
     public void Load(Cursor cursor, ProgramItem programItem, ViewHolder holder) {
@@ -87,7 +150,7 @@ public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ViewHold
                 i++;
             }
         }
-        GunAdapter adapterMember = new GunAdapter(activity, gunItemArrayList,autoLoad);
+        GunAdapter adapterMember = new GunAdapter(activity, gunItemArrayList, autoLoad);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(activity);
         holder.rv_gunler.setLayoutManager(linearLayoutManager);
         holder.rv_gunler.setAdapter(adapterMember);
@@ -120,7 +183,7 @@ public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ViewHold
                 columnFilled[i] = columnValuesCount;
         }
         int filledColumnCount = 0;
-        int emptyColumnCount=0;
+        int emptyColumnCount = 0;
         for (int value : columnFilled
         ) {
             if (value > 0)
@@ -131,8 +194,8 @@ public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ViewHold
 //        float ratio = (float) columnFilled.length / (float) filledColumnCount;
 //        if (ratio > filledColumnCount )
 //            Toast.makeText(activity, "This is a full body program", Toast.LENGTH_SHORT).show();
-        if(emptyColumnCount>=3)
-            isFullBodyProgram=true;
+        if (emptyColumnCount >= 3)
+            isFullBodyProgram = true;
         return isFullBodyProgram;
     }
 
@@ -144,11 +207,13 @@ public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ViewHold
     public class ViewHolder extends RecyclerView.ViewHolder {
         Button btn_program;
         RecyclerView rv_gunler;
+        ImageView imageView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             btn_program = itemView.findViewById(R.id.btn_program);
             rv_gunler = itemView.findViewById(R.id.rv_gunler);
+            imageView = itemView.findViewById(R.id.imageView13);
         }
     }
 

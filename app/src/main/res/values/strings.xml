@@ -8,10 +8,12 @@
     <string name="previous">Previous</string>
 
     <!-- TEST ADDS -->
-<!--        <string name="id">ca-app-pub-8946455145480386~7405905971</string>-->
-<!--        <string name="add">ca-app-pub-3940256099942544/1033173712</string>-->
+    <string name="id">ca-app-pub-8946455145480386~7405905971</string>
+    <string name="add">ca-app-pub-3940256099942544/1033173712</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!-- REAL ADDS -->
-    <string name="id">ca-app-pub-8946455145480386~7405905971</string>
-    <string name="add">ca-app-pub-8946455145480386/2153579296</string>
+    <!--    <string name="id">ca-app-pub-8946455145480386~7405905971</string>-->
+    <!--    <string name="add">ca-app-pub-8946455145480386/2153579296</string>-->
 </resources>

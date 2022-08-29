@@ -52,7 +52,7 @@ public class MainFragment extends Fragment {
         buttonArrayList = new ArrayList<>();
 
         buttonArrayList.add(binding.btnOlculerim);
-        buttonArrayList.add(binding.btnGames);
+        buttonArrayList.add(binding.btnOyunlar);
         buttonArrayList.add(binding.btnAntrenman);
         buttonArrayList.add(binding.btnDiyet);
         buttonArrayList.add(binding.btnArena);
@@ -61,8 +61,8 @@ public class MainFragment extends Fragment {
         buttonArrayList.add(binding.btnIletisim);
         buttonArrayList.add(binding.btnTakviyeler);
         buttonArrayList.add(binding.btnDuyurular);
-        buttonArrayList.add(binding.btnPt);
-        buttonArrayList.add(binding.btnKapanis);
+        buttonArrayList.add(binding.btnHareketler);
+        buttonArrayList.add(binding.btnSaatler);
 
         return binding.getRoot();
     }
@@ -159,11 +159,11 @@ public class MainFragment extends Fragment {
             }
         });
 
-        binding.btnGames.setOnClickListener(new View.OnClickListener() {
+        binding.btnOyunlar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Locked();
-                animation = ObjectAnimator.ofFloat(binding.btnGames, "rotationY", 0.0f, 360);
+                animation = ObjectAnimator.ofFloat(binding.btnOyunlar, "rotationY", 0.0f, 360);
                 animation.setDuration(1000);
                 animation.start();
                 countDownTimer = new CountDownTimer(1000, 1000) {
@@ -196,8 +196,8 @@ public class MainFragment extends Fragment {
 
                     @Override
                     public void onFinish() {
-                        new MyCustomDialog(getActivity()).Toast("Bu bölüm henüz aktif değil");
-                        Unlocked();
+                        NavHostFragment.findNavController(MainFragment.this)
+                                .navigate(R.id.action_mainFragment_to_dietFragment);
                     }
                 }.start();
             }
@@ -291,11 +291,11 @@ public class MainFragment extends Fragment {
             }
         });
 
-        binding.btnPt.setOnClickListener(new View.OnClickListener() {
+        binding.btnHareketler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Locked();
-                animation = ObjectAnimator.ofFloat(binding.btnPt, "rotationY", 0.0f, 360);
+                animation = ObjectAnimator.ofFloat(binding.btnHareketler, "rotationY", 0.0f, 360);
                 animation.setDuration(1000);
                 animation.start();
                 countDownTimer = new CountDownTimer(1000, 1000) {
@@ -313,11 +313,11 @@ public class MainFragment extends Fragment {
             }
         });
 
-        binding.btnKapanis.setOnClickListener(new View.OnClickListener() {
+        binding.btnSaatler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Locked();
-                animation = ObjectAnimator.ofFloat(binding.btnKapanis, "rotationY", 0.0f, 360);
+                animation = ObjectAnimator.ofFloat(binding.btnSaatler, "rotationY", 0.0f, 360);
                 animation.setDuration(1000);
                 animation.start();
                 countDownTimer = new CountDownTimer(1000, 1000) {

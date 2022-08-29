@@ -1,20 +1,12 @@
 package com.pakachu.apaydinfitness.adapters;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.ObjectAnimator;
 import android.app.Activity;
-import android.content.res.ColorStateList;
-import android.content.res.Resources;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.Toast;
@@ -26,7 +18,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-import com.pakachu.apaydinfitness.AntrenmanAktarFragment;
 import com.pakachu.apaydinfitness.AntrenmanOlusturFragment;
 import com.pakachu.apaydinfitness.helpers.CheckHareket;
 import com.pakachu.apaydinfitness.R;
@@ -38,7 +29,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     Activity activity;
     ArrayList<ItemItem> itemItemArrayList;
     public AntrenmanOlusturFragment antrenmanOlusturFragment;
-    public AntrenmanAktarFragment antrenmanAktarFragment;
 
     public ItemAdapter(Activity activity, ArrayList<ItemItem> itemItemArrayList) {
         this.activity = activity;
@@ -90,7 +80,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
                         antrenmanOlusturFragment.TumHareketler_HareketSil(holder.getAdapterPosition());
                         break;
                     case 4:
-                        antrenmanAktarFragment.Aktar(itemItem.text, itemItem.mainIndex);
+//                        antrenmanAktarFragment.Aktar(itemItem.text, itemItem.mainIndex);
                         break;
                     default:
                         Toast.makeText(activity, "switchInt değişkeni atanmamış!", Toast.LENGTH_SHORT).show();

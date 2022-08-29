@@ -16,12 +16,6 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".games.xox.XoX"
-            android:exported="false" />
-        <activity
-            android:name=".games.gapway.GamesActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="Apaydın Fitness"

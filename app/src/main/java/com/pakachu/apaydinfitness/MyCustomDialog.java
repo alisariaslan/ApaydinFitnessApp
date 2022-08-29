@@ -4,9 +4,12 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatDelegate;
@@ -16,6 +19,7 @@ public class MyCustomDialog {
     private final Dialog dialog;
     private final TextView tv_baslik;
     private final TextView tv_content;
+    private final ImageView iv_dialog;
     public Button positive, negative, neutral;
 
     public MyCustomDialog(Activity activity) {
@@ -41,6 +45,7 @@ public class MyCustomDialog {
         neutral = dialog.findViewById(R.id.btn_neutral);
         tv_baslik = dialog.findViewById(R.id.tv_dialogBaslik);
         tv_content = dialog.findViewById(R.id.tv_dialogText);
+        iv_dialog = dialog.findViewById(R.id.iv_dialog);
     }
 
 
@@ -55,6 +60,11 @@ public class MyCustomDialog {
 
     public void setContent(String yazi) {
         tv_content.setText(yazi);
+    }
+
+    public void setImage(Bitmap bitmap) {
+        iv_dialog.setVisibility(View.VISIBLE);
+        iv_dialog.setImageBitmap(bitmap);
     }
 
     public void setButtons(String positiveString) {

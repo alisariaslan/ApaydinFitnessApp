@@ -1,44 +1,79 @@
 package com.pakachu.apaydinfitness.games.xox;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.animation.ObjectAnimator;
-import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+
 import android.os.CountDownTimer;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.view.WindowManager;
+import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 import com.pakachu.apaydinfitness.R;
-import com.pakachu.apaydinfitness.databinding.ActivityXoxBinding;
-import com.pakachu.apaydinfitness.db.DBJeton;
+import com.pakachu.apaydinfitness.databinding.FragmentXOXBinding;
+import com.pakachu.apaydinfitness.helpers.AddLoader;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-public class XoX extends AppCompatActivity {
+public class XOXFragment extends Fragment {
 
-    private ActivityXoxBinding binding;
+    private FragmentXOXBinding binding;
+
     private ArrayList<Button> buttonArrayList;
-
     private char p1, p2;
     private boolean ready = false;
     private Random random;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        binding = ActivityXoxBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+    private CountDownTimer countDownTimerStartReady;
+    private boolean timerStartReady = false;
 
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
+    private CountDownTimer countDownTimerStart;
+    private boolean timerStart = false;
+
+    private CountDownTimer countDownTimerThink;
+    private boolean timerThink = false;
+
+    private CountDownTimer countDownTimerSay;
+    private boolean timerSay = false;
+
+    private CountDownTimer countDownTimerSaySub;
+    private boolean timerSaySub = false;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        binding = FragmentXOXBinding.inflate(inflater, container, false);
+
+        binding.btnCikis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                requireActivity().getSupportFragmentManager().popBackStack();
+            }
+        });
+
+        binding.btnTekrarDene.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ready = false;
+                v.setVisibility(View.GONE);
+                Start();
+            }
+        });
+
+        Start();
+
+        return binding.getRoot();
+    }
+
+    private void Start() {
+        AddLoader addLoader = new AddLoader(getActivity());
+        addLoader.RequestInterstatial();
 
         init();
 
@@ -51,26 +86,31 @@ public class XoX extends AppCompatActivity {
             p1 = 'O';
         }
 
-        binding.clButtons.startAnimation(AnimationUtils.loadAnimation(this, R.anim.comefromleft));
-        new CountDownTimer(3000, 1000) {
+        binding.clButtons.startAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.comefromleft));
+        binding.givBowser.setImageResource(R.drawable.bowser);
+        binding.tvNote.setText("Sıranın kimde olduğu şimdi belirlenecek!");
+
+        countDownTimerStartReady = new CountDownTimer(3000, 1000) {
 
             @Override
             public void onTick(long millisUntilFinished) {
-
+                timerStartReady = true;
             }
 
             @Override
             public void onFinish() {
+                timerStartReady = false;
                 btn_fadein();
                 say("Haha! Yenilmeye hazır ol! Ben Bowser. Haha!", 5);
-                new CountDownTimer(5000, 1000) {
+                countDownTimerStart = new CountDownTimer(5000, 1000) {
                     @Override
                     public void onTick(long millisUntilFinished) {
-
+                        timerStart=true;
                     }
 
                     @Override
                     public void onFinish() {
+                        timerStart=false;
                         int rnd = random.nextInt(2);
                         if (rnd == 0) {
                             NoReady();
@@ -81,49 +121,6 @@ public class XoX extends AppCompatActivity {
                 }.start();
             }
         }.start();
-
-        binding.btnCikis.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ready = false;
-                binding.tvNote.setText("Çıkış yapılıyor...");
-                binding.btnCikis.setVisibility(View.GONE);
-                binding.btnTekrarDene.setVisibility(View.GONE);
-                say("Demek kaçıyorsun! HAHA!", 3);
-                new CountDownTimer(3000, 1000) {
-
-                    @Override
-                    public void onTick(long millisUntilFinished) {
-
-                    }
-
-                    @Override
-                    public void onFinish() {
-                        finish();
-                    }
-                }.start();
-            }
-        });
-
-        binding.btnTekrarDene.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ready = false;
-                binding.tvNote.setText("Yeniden başlatılıyor...");
-                binding.btnCikis.setVisibility(View.GONE);
-                binding.btnTekrarDene.setVisibility(View.GONE);
-                RestartActivity(3);
-            }
-        });
-
-        int minusOne = -1;
-//        Sec(1+minusOne);
-//        Sec(5+minusOne);
-
-//        Sec(1+minusOne, p1);
-//        Sec(2+minusOne, p1);
-//        Sec(4+minusOne, p1);
-
     }
 
     private void Ready() {
@@ -136,17 +133,62 @@ public class XoX extends AppCompatActivity {
         ready = false;
     }
 
-    private void randomAt() {
-        say("Şimdi ağlayacaksın!", 1);
-        new CountDownTimer(random.nextInt(5) * 1000, 1000) {
+    private void say(String text, int duration) {
+        if (timerSay) {
+            countDownTimerSay.cancel();
+            timerSay = false;
+        }
+        if (timerSaySub) {
+            countDownTimerSaySub.cancel();
+            timerSaySub = false;
+        }
+        binding.tvBowser.clearAnimation();
+        binding.tvBowser.setVisibility(View.GONE);
 
+        binding.tvBowser.setText(text);
+        binding.tvBowser.setVisibility(View.VISIBLE);
+        binding.tvBowser.startAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.bounce));
+
+        countDownTimerSay = new CountDownTimer(duration * 1000L, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-
+                timerSay = true;
             }
 
             @Override
             public void onFinish() {
+                timerSay = false;
+                binding.tvBowser.clearAnimation();
+                binding.tvBowser.startAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.fadeout));
+                countDownTimerSaySub = new CountDownTimer(1000, 1000) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        timerSaySub = true;
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        binding.tvBowser.clearAnimation();
+                        binding.tvBowser.setVisibility(View.GONE);
+                        timerSaySub = false;
+                    }
+                }.start();
+            }
+        }.start();
+    }
+
+    private void randomAt() {
+        say("Şimdi ağlayacaksın!", 1);
+        countDownTimerThink = new CountDownTimer(random.nextInt(5) * 1000, 1000) {
+
+            @Override
+            public void onTick(long millisUntilFinished) {
+                timerThink = true;
+            }
+
+            @Override
+            public void onFinish() {
+                timerThink = false;
                 StringBuilder currentPattern = new StringBuilder();
                 for (Button btn : buttonArrayList)
                     currentPattern.append(btn.getText());
@@ -205,7 +247,7 @@ public class XoX extends AppCompatActivity {
     private void Sec(int index, char p) {
         Button secilenbtn = buttonArrayList.get(index);
         secilenbtn.setText("" + p);
-        secilenbtn.startAnimation(AnimationUtils.loadAnimation(XoX.this, R.anim.fall));
+        secilenbtn.startAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.fall));
         secilenbtn.setEnabled(false);
         say("Hadi annene git ve ağla! Haha!", 1);
     }
@@ -221,8 +263,7 @@ public class XoX extends AppCompatActivity {
         int won = pattern.contains(currentPattern.toString(), p);
         Log.e("game", "IsWon? " + won);
 
-        DBJeton dbJeton = new DBJeton(this);
-        int coin = dbJeton.getCoin();
+
         if (won == 0) {
             if (!isplayer)
                 Ready();
@@ -230,96 +271,31 @@ public class XoX extends AppCompatActivity {
                 randomAt();
         } else if (won == 1) {
             if (!isplayer) {
-                binding.tvNote.setText("Bowser Kazandı! 10 Coin kaybettiniz");
+                binding.tvNote.setText("Maalesef kaybettiniz. Bowser oyunu kazandı!");
                 binding.givBowser.setImageResource(R.drawable.bowser_win);
                 say("Haha! Hadi ağla bakalım!! Haha!", 5);
                 binding.btnTekrarDene.setVisibility(View.VISIBLE);
-                coin-=10;
+
             } else {
-                binding.tvNote.setText("Tebrikler. Kazandınız! 100 Coin cüzdanınıza eklendi");
+                binding.tvNote.setText("Tebrikler. Kazandınız!");
                 binding.givBowser.setImageResource(R.drawable.bowser_fail);
                 say("Ah, hayır olamazzz!!!", 5);
-                coin+=100;
+                binding.btnTekrarDene.setVisibility(View.VISIBLE);
             }
         } else {
-            binding.tvNote.setText("Berabere! İki tarafta eşit.");
+            binding.tvNote.setText("Berabere. İki tarafta eşit!");
             binding.givBowser.setImageResource(R.drawable.bowser_equal);
             say("Bugün şanslı günündesin!", 5);
             binding.btnTekrarDene.setVisibility(View.VISIBLE);
         }
-        dbJeton.setCoin(coin);
-    }
 
-    private void RestartActivity(int duration) {
-        new CountDownTimer(duration * 1000L, 1000) {
-
-            @Override
-            public void onTick(long millisUntilFinished) {
-
-            }
-
-            @Override
-            public void onFinish() {
-                finish();
-                startActivity(new Intent(XoX.this, XoX.class));
-            }
-        }.start();
-    }
-
-    private CountDownTimer countDownTimerSay;
-    private CountDownTimer countDownTimerSaySub;
-    private boolean sayBoolean = false;
-    private boolean sayBooleanSub = false;
-
-    private void say(String text, int duration) {
-        if (sayBoolean) {
-            countDownTimerSay.cancel();
-            sayBoolean = false;
-        }
-        if (sayBooleanSub) {
-            countDownTimerSaySub.cancel();
-            sayBooleanSub = false;
-        }
-        binding.tvBowser.clearAnimation();
-        binding.tvBowser.setVisibility(View.GONE);
-
-        binding.tvBowser.setText(text);
-        binding.tvBowser.setVisibility(View.VISIBLE);
-        binding.tvBowser.startAnimation(AnimationUtils.loadAnimation(XoX.this, R.anim.bounce));
-
-        countDownTimerSay = new CountDownTimer(duration * 1000L, 1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                sayBoolean = true;
-            }
-
-            @Override
-            public void onFinish() {
-                sayBoolean = false;
-                binding.tvBowser.clearAnimation();
-                binding.tvBowser.startAnimation(AnimationUtils.loadAnimation(XoX.this, R.anim.fadeout));
-                countDownTimerSaySub = new CountDownTimer(1000, 1000) {
-                    @Override
-                    public void onTick(long millisUntilFinished) {
-                        sayBooleanSub = true;
-                    }
-
-                    @Override
-                    public void onFinish() {
-                        binding.tvBowser.clearAnimation();
-                        binding.tvBowser.setVisibility(View.GONE);
-                        sayBooleanSub = false;
-                    }
-                }.start();
-            }
-        }.start();
     }
 
     private void btn_fadein() {
         int delay = 1000;
         for (Button btn : buttonArrayList
         ) {
-            btn.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fadein));
+            btn.startAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.fadein));
             btn.setVisibility(View.VISIBLE);
             ObjectAnimator animation = ObjectAnimator.ofFloat(btn, "alpha", 0.0f, 1, 1);
             animation.setDuration(delay);
@@ -329,6 +305,12 @@ public class XoX extends AppCompatActivity {
     }
 
     private void init() {
+        binding.btnCikis.setVisibility(View.GONE);
+
+        CheckTimers();
+
+        timerStart = timerThink = timerSay = timerSaySub = false;
+
         random = new Random();
         buttonArrayList = new ArrayList<>();
 
@@ -344,6 +326,8 @@ public class XoX extends AppCompatActivity {
 
         for (Button btn : buttonArrayList
         ) {
+            btn.setText(".");
+            btn.setEnabled(true);
             btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -351,12 +335,32 @@ public class XoX extends AppCompatActivity {
                         NoReady();
                         btn.setEnabled(false);
                         btn.setText("" + p1);
-                        btn.startAnimation(AnimationUtils.loadAnimation(XoX.this, R.anim.rotate));
+                        btn.startAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.rotate));
 
                         kontrol(true, p1);
                     }
                 }
             });
         }
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+        CheckTimers();
+    }
+
+    private void CheckTimers() {
+        if (timerStart)
+            countDownTimerStart.cancel();
+        if (timerStartReady)
+            countDownTimerStartReady.cancel();
+        if (timerThink)
+            countDownTimerThink.cancel();
+        if (timerSay)
+            countDownTimerSay.cancel();
+        if (timerSaySub)
+            countDownTimerSaySub.cancel();
     }
 }

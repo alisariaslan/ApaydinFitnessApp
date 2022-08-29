@@ -5,6 +5,18 @@
     android:layout_width="370dp"
     android:layout_height="wrap_content">
 
+    <ImageView
+        android:id="@+id/iv_dialog"
+        android:layout_width="0dp"
+        android:layout_height="400dp"
+        android:scaleType="centerCrop"
+        android:src="@android:drawable/ic_lock_lock"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_dialogBaslik"
+        tools:visibility="visible" />
+
     <TextView
         android:id="@+id/tv_dialogBaslik"
         android:layout_width="0dp"
@@ -30,7 +42,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"
         android:fontFamily="@font/allerta"
-        android:gravity="center_vertical"
+
         android:text="Yazı"
         android:textAlignment="center"
         android:textSize="14sp"

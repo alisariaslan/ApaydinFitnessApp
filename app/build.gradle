@@ -9,8 +9,8 @@ android {
         applicationId "com.pakachu.apaydinfitness"
         minSdk 24
         targetSdk 32
-        versionCode 9
-        versionName "BarFix"
+        versionCode 10
+        versionName "Mekik"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
