@@ -24,12 +24,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="300dp"
+                android:minHeight="800dp"
                 android:theme="@style/Theme.ApaydinFitness.Card"
                 app:cardBackgroundColor="#B3121000"
-                app:cardCornerRadius="50dp">
+                app:cardCornerRadius="50dp"
+                app:contentPaddingBottom="30dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -72,12 +74,10 @@
                                 android:id="@+id/textView63"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:background="@color/cardBackground"
                                 android:fontFamily="@font/audiowide"
                                 android:padding="5dp"
                                 android:text="Makrolarım"
                                 android:textAlignment="center"
-                                android:textColor="@color/textFrontOfYellow"
                                 android:textSize="20sp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -85,118 +85,35 @@
 
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:layout_height="wrap_content"
                                 android:orientation="vertical"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@+id/textView63">
 
 
-                                <androidx.constraintlayout.widget.ConstraintLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content">
-
-                                    <TextView
-                                        android:id="@+id/textView69"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="8dp"
-                                        android:fontFamily="@font/allerta"
-                                        android:shadowColor="#89FF00"
-                                        android:shadowRadius="15"
-                                        android:text="Kilo Ver"
-                                        android:textAlignment="textStart"
-                                        android:textSize="16sp"
-                                        app:layout_constraintEnd_toStartOf="@+id/textView70"
-                                        app:layout_constraintStart_toStartOf="parent"
-                                        app:layout_constraintTop_toTopOf="parent" />
-
-                                    <TextView
-                                        android:id="@+id/textView70"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="8dp"
-                                        android:fontFamily="@font/allerta"
-                                        android:shadowColor="#FFFFFF"
-                                        android:shadowRadius="15"
-                                        android:text="Sabitle"
-                                        android:textAlignment="textStart"
-                                        android:textSize="16sp"
-                                        app:layout_constraintEnd_toStartOf="@+id/textView71"
-                                        app:layout_constraintStart_toEndOf="@+id/textView69"
-                                        app:layout_constraintTop_toTopOf="parent" />
-
-                                    <TextView
-                                        android:id="@+id/textView71"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="8dp"
-                                        android:fontFamily="@font/allerta"
-                                        android:shadowColor="#FF1100"
-                                        android:shadowRadius="15"
-                                        android:text="Kilo Al"
-                                        android:textAlignment="textStart"
-                                        android:textSize="16sp"
-                                        app:layout_constraintEnd_toEndOf="parent"
-                                        app:layout_constraintStart_toEndOf="@+id/textView70"
-                                        app:layout_constraintTop_toTopOf="parent" />
-
-                                    <ProgressBar
-                                        android:id="@+id/progressBar9"
-                                        style="?android:attr/progressBarStyleHorizontal"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:paddingTop="10dp"
-                                        android:progress="100"
-                                        android:progressTint="#89FF00"
-                                        app:layout_constraintEnd_toStartOf="@+id/progressBar8"
-                                        app:layout_constraintStart_toStartOf="parent"
-                                        app:layout_constraintTop_toBottomOf="@+id/textView70" />
-
-                                    <ProgressBar
-                                        android:id="@+id/progressBar8"
-                                        style="?android:attr/progressBarStyleHorizontal"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:paddingTop="10dp"
-                                        android:progress="100"
-                                        android:progressTint="#FF0000"
-                                        app:layout_constraintEnd_toEndOf="parent"
-                                        app:layout_constraintStart_toEndOf="@+id/progressBar9"
-                                        app:layout_constraintTop_toBottomOf="@+id/textView70" />
-                                </androidx.constraintlayout.widget.ConstraintLayout>
-
                                 <TextView
-                                    android:id="@+id/textView68"
+                                    android:id="@+id/tv_kal"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="10dp"
                                     android:fontFamily="@font/audiowide"
-                                    android:paddingStart="10dp"
-                                    android:text="Kalori (1860kcal) (Kilo alıyorsunuz)"
-                                    android:textAlignment="textStart"
+                                    android:paddingEnd="10dp"
+                                    android:text="Toplam Kalori (?)"
+                                    android:textAlignment="textEnd"
                                     android:textSize="16sp"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent" />
 
-                                <ProgressBar
-                                    android:id="@+id/progressBarKal"
-                                    style="?android:attr/progressBarStyleHorizontal"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:padding="10dp"
-                                    android:progress="70"
-                                    android:progressTint="#E91E63" />
-
                                 <TextView
-                                    android:id="@+id/textView64"
+                                    android:id="@+id/tv_pro"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="10dp"
                                     android:fontFamily="@font/audiowide"
                                     android:paddingStart="10dp"
-                                    android:text="Protein (70gr) (Normalden fazla)"
+                                    android:text="Protein (?)"
                                     android:textAlignment="textStart"
                                     android:textSize="16sp"
                                     app:layout_constraintEnd_toEndOf="parent"
@@ -209,17 +126,17 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:padding="10dp"
-                                    android:progress="70"
-                                    android:progressTint="#FF5722" />
+                                    android:progress="0"
+                                    android:progressTint="#FF9800" />
 
                                 <TextView
-                                    android:id="@+id/textView65"
+                                    android:id="@+id/tv_karb"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="10dp"
                                     android:fontFamily="@font/audiowide"
                                     android:paddingStart="10dp"
-                                    android:text="Karbonhidrat (350gr) (Normalden fazla)"
+                                    android:text="Karbonhidrat (?)"
                                     android:textAlignment="textStart"
                                     android:textSize="16sp"
                                     app:layout_constraintEnd_toEndOf="parent"
@@ -232,17 +149,17 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:padding="10dp"
-                                    android:progress="90"
+                                    android:progress="0"
                                     android:progressTint="#8BC34A" />
 
                                 <TextView
-                                    android:id="@+id/textView66"
+                                    android:id="@+id/tv_yag"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="10dp"
                                     android:fontFamily="@font/audiowide"
                                     android:paddingStart="10dp"
-                                    android:text="Yağ (35gr) (Normalden az)"
+                                    android:text="Yağ (?)"
                                     android:textAlignment="textStart"
                                     android:textSize="16sp"
                                     app:layout_constraintEnd_toEndOf="parent"
@@ -255,16 +172,15 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:padding="10dp"
-                                    android:progress="30"
-                                    android:progressTint="#FFC107" />
+                                    android:progress="0"
+                                    android:progressTint="#F44336" />
 
                                 <TextView
                                     android:id="@+id/textView67"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="10dp"
                                     android:fontFamily="@font/audiowide"
-                                    android:text="Yediklerim"
+                                    android:text="Bugün Yediklerim"
                                     android:textAlignment="center"
                                     android:textSize="20sp"
                                     app:layout_constraintEnd_toEndOf="parent"
@@ -275,7 +191,7 @@
                                     android:id="@+id/textView72"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="8dp"
+                                    android:layout_margin="10dp"
                                     android:fontFamily="@font/audiowide"
                                     android:text="Herhangi bir şey eklemediniz"
                                     android:textAlignment="center"
@@ -285,8 +201,9 @@
                                     app:layout_constraintTop_toTopOf="parent" />
 
                                 <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rw_food"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
+                                    android:layout_height="wrap_content">
 
                                 </androidx.recyclerview.widget.RecyclerView>
 
@@ -298,61 +215,14 @@
                                     android:text="Kaydet"
                                     android:textColor="@color/textFrontOfYellow"
                                     android:translationY="10dp"
+                                    android:visibility="gone"
                                     app:backgroundTint="@color/cardBackground"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent" />
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    tools:visibility="visible" />
 
                             </LinearLayout>
-
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cardView34"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginEnd="10dp"
-                        android:paddingBottom="10dp"
-                        android:theme="@style/Theme.ApaydinFitness.InCard"
-                        app:cardCornerRadius="50dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/cardView">
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:minHeight="200dp">
-
-                            <TextView
-                                android:id="@+id/textView26"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
-                                android:fontFamily="@font/audiowide"
-                                android:text="Yemek Ekle"
-                                android:textAlignment="center"
-                                android:textSize="20sp"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-
-                            <Button
-                                android:id="@+id/button2"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/audiowide"
-                                android:text="Erişilemiyor"
-                                android:textColor="@color/textFrontOfYellow"
-                                android:translationY="10dp"
-                                app:backgroundTint="@color/cardBackground"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent" />
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </androidx.cardview.widget.CardView>
@@ -369,12 +239,11 @@
                         app:cardCornerRadius="50dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/cardView34">
+                        app:layout_constraintTop_toBottomOf="@+id/cardView">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:minHeight="200dp">
+                            android:layout_height="match_parent">
 
                             <TextView
                                 android:id="@+id/textView27"
@@ -394,13 +263,331 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/audiowide"
-                                android:text="Erişilemiyor"
+                                android:tag="0"
+                                android:text="Yeni yemek oluştur"
                                 android:textColor="@color/textFrontOfYellow"
                                 android:translationY="10dp"
                                 app:backgroundTint="@color/cardBackground"
-                                app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent" />
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/cardView8" />
+
+                            <EditText
+                                android:id="@+id/editTextTextPersonName30"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="10dp"
+                                android:ems="10"
+                                android:fontFamily="@font/audiowide"
+                                android:hint="Yemek ara"
+                                android:inputType="textPersonName"
+                                app:layout_constraintEnd_toStartOf="@+id/imageView9"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+                            <ImageView
+                                android:id="@+id/imageView9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_marginEnd="10dp"
+                                android:src="@android:drawable/ic_menu_search"
+                                app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName30"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName30" />
+
+                            <TextView
+                                android:id="@+id/textView81"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/audiowide"
+                                android:text="null"
+                                android:textAlignment="center"
+                                android:textSize="16sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/textView70"
+                                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName30" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rw_all_foods"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/button3"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textView81" />
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cardView8"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:visibility="gone"
+                                app:cardCornerRadius="50dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/rw_all_foods"
+                                tools:visibility="visible">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/constraintLayout6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="15dp"
+                                    android:theme="@style/Theme.ApaydinFitness.InItem">
+
+                                    <TextView
+                                        android:id="@+id/textView64"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/audiowide"
+                                        android:text="Yemek Ekle"
+                                        android:textAlignment="center"
+                                        android:textSize="20sp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/textView65"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/allerta"
+                                        android:text="Yemeğin adı:"
+                                        android:textSize="16sp"
+                                        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName33"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName33" />
+
+                                    <EditText
+                                        android:id="@+id/editTextTextPersonName33"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginTop="10dp"
+                                        android:fontFamily="@font/allerta"
+                                        android:hint="Yemeğin ismi"
+                                        android:inputType="textPersonName"
+                                        android:textSize="16sp"
+                                        app:layout_constraintStart_toEndOf="@+id/textView65"
+                                        app:layout_constraintTop_toBottomOf="@+id/textView64" />
+
+                                    <RadioGroup
+                                        android:id="@+id/radioGroup3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:checkedButton="@id/radioButton8"
+                                        android:orientation="horizontal"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName33">
+
+                                        <TextView
+                                            android:id="@+id/textView66"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:fontFamily="@font/allerta"
+                                            android:text="Eklediğim yemek: "
+                                            android:textSize="16sp" />
+
+                                        <RadioButton
+                                            android:id="@+id/radioButton8"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:fontFamily="@font/audiowide"
+                                            android:text="Katı" />
+
+                                        <RadioButton
+                                            android:id="@+id/radioButton9"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:fontFamily="@font/audiowide"
+                                            android:text="Sıvı" />
+                                    </RadioGroup>
+
+                                    <TextView
+                                        android:id="@+id/textView68"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/allerta"
+                                        android:text="Kaç gram?"
+                                        android:textSize="16sp"
+                                        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName31"
+                                        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName31"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName31" />
+
+                                    <EditText
+                                        android:id="@+id/editTextTextPersonName31"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:ems="3"
+                                        android:fontFamily="@font/audiowide"
+                                        android:hint="gram"
+                                        android:inputType="numberSigned"
+                                        android:maxLength="3"
+                                        android:textAlignment="center"
+                                        android:textSize="16sp"
+                                        app:layout_constraintStart_toEndOf="@+id/textView68"
+                                        app:layout_constraintTop_toBottomOf="@+id/radioGroup3" />
+
+                                    <TextView
+                                        android:id="@+id/textView69"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/allerta"
+                                        android:text="gr"
+                                        android:textSize="16sp"
+                                        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName31"
+                                        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName31"
+                                        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName31" />
+
+                                    <TextView
+                                        android:id="@+id/textView71"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="8dp"
+                                        android:fontFamily="@font/allerta"
+                                        android:text="\? gramında:"
+                                        android:textSize="20sp"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName31" />
+
+                                    <TextView
+                                        android:id="@+id/textView73"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/allerta"
+                                        android:text="Kaç gram protein var?"
+                                        android:textSize="16sp"
+                                        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName32"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName32" />
+
+                                    <EditText
+                                        android:id="@+id/editTextTextPersonName32"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:ems="4"
+                                        android:fontFamily="@font/audiowide"
+                                        android:hint="gram"
+                                        android:inputType="numberDecimal"
+                                        android:maxLength="5"
+                                        android:textAlignment="center"
+                                        android:textSize="16sp"
+                                        app:layout_constraintStart_toEndOf="@+id/textView73"
+                                        app:layout_constraintTop_toBottomOf="@+id/textView71" />
+
+                                    <TextView
+                                        android:id="@+id/textView76"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/allerta"
+                                        android:text="gr"
+                                        android:textSize="16sp"
+                                        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName32"
+                                        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName32"
+                                        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName32" />
+
+                                    <TextView
+                                        android:id="@+id/textView74"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/allerta"
+                                        android:text="Kaç gram karbonhidrat var?"
+                                        android:textSize="16sp"
+                                        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName34"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName34" />
+
+                                    <EditText
+                                        android:id="@+id/editTextTextPersonName34"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:ems="4"
+                                        android:fontFamily="@font/audiowide"
+                                        android:hint="gram"
+                                        android:inputType="numberDecimal"
+                                        android:maxLength="5"
+                                        android:textAlignment="center"
+                                        android:textSize="16sp"
+                                        app:layout_constraintStart_toEndOf="@+id/textView74"
+                                        app:layout_constraintTop_toBottomOf="@+id/textView73" />
+
+                                    <TextView
+                                        android:id="@+id/textView78"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/allerta"
+                                        android:text="gr"
+                                        android:textSize="16sp"
+                                        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName34"
+                                        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName34"
+                                        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName34" />
+
+                                    <TextView
+                                        android:id="@+id/textView75"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/allerta"
+                                        android:text="Kaç gram yağ var?"
+                                        android:textSize="16sp"
+                                        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName35"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName35" />
+
+                                    <EditText
+                                        android:id="@+id/editTextTextPersonName35"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:ems="4"
+                                        android:fontFamily="@font/audiowide"
+                                        android:hint="gram"
+                                        android:inputType="numberDecimal"
+                                        android:maxLength="5"
+                                        android:textAlignment="center"
+                                        android:textSize="16sp"
+                                        app:layout_constraintStart_toEndOf="@+id/textView75"
+                                        app:layout_constraintTop_toBottomOf="@+id/textView74" />
+
+                                    <TextView
+                                        android:id="@+id/textView79"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/allerta"
+                                        android:text="gr"
+                                        android:textSize="16sp"
+                                        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName35"
+                                        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName35"
+                                        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName35" />
+
+                                    <TextView
+                                        android:id="@+id/textView77"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/allerta"
+                                        android:text="Tahmini kalori değeri:"
+                                        android:textSize="16sp"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName35" />
+
+                                    <TextView
+                                        android:id="@+id/textView80"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:fontFamily="@font/audiowide"
+                                        android:text="\?"
+                                        android:textSize="16sp"
+                                        app:layout_constraintStart_toEndOf="@+id/textView77"
+                                        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName35" />
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            </androidx.cardview.widget.CardView>
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </androidx.cardview.widget.CardView>
@@ -457,14 +644,15 @@
                             <ProgressBar
                                 android:id="@+id/progressBar"
                                 style="?android:attr/progressBarStyle"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="100dp"
                                 android:layout_marginStart="10dp"
                                 android:layout_marginEnd="10dp"
                                 android:visibility="gone"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.0"
-                                app:layout_constraintStart_toStartOf="parent" />
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
 
 
                         </androidx.constraintlayout.widget.ConstraintLayout>

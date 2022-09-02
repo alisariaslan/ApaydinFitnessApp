@@ -24,12 +24,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="300dp"
+                android:minHeight="800dp"
                 android:theme="@style/Theme.ApaydinFitness.Card"
                 app:cardBackgroundColor="#B3121000"
-                app:cardCornerRadius="50dp">
+                app:cardCornerRadius="50dp"
+                app:contentPaddingBottom="30dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"

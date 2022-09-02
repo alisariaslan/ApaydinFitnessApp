@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,11 +48,25 @@ public class LoginFragment extends Fragment {
         dbLogin = new DBLogin(getActivity());
         Cursor cursor = dbLogin.getData();
         if (cursor.getCount() == 0) {
-            dbLogin.addData("apaydin2017", 2177, 0, 0, 100, 0);
-            dbLogin.addData("testantrenor", 4166, 0, 0, 51, 0);
-            dbLogin.addData("test", 1234, 0, 0, 0, 0);
+            dbLogin.addData("apaydin2017", "2177", 0, 0, 100, 0);
+            dbLogin.addData("testantrenor", "4166", 0, 0, 51, 0);
+            dbLogin.addData("test", "1234", 0, 0, 0, 0);
         }
 
+        binding.button32.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String pinString = "";
+                pinString = binding.editTextTextPersonName3.getText().toString();
+                if(!pinString.equals("")){
+                    pinString = pinString.substring(0,pinString.length()-1);
+                    binding.editTextTextPersonName3.setText(pinString);
+                    binding.button4.setTag("0");
+                }
+            }
+        });
+
+        binding.button33.setOnClickListener(v -> binding.editTextTextPersonName3.setText(binding.editTextTextPersonName3.getText().toString() + binding.button33.getText().toString()));
         binding.button5.setOnClickListener(v -> binding.editTextTextPersonName3.setText(binding.editTextTextPersonName3.getText().toString() + binding.button5.getText().toString()));
         binding.button7.setOnClickListener(v -> binding.editTextTextPersonName3.setText(binding.editTextTextPersonName3.getText().toString() + binding.button7.getText().toString()));
         binding.button8.setOnClickListener(v -> binding.editTextTextPersonName3.setText(binding.editTextTextPersonName3.getText().toString() + binding.button8.getText().toString()));
@@ -90,6 +105,17 @@ public class LoginFragment extends Fragment {
             }
         });
 
+        binding.editTextTextPersonName3.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus) {
+                    v.setEnabled(false);
+                    binding.constraintLayout3.startAnimation(AnimationUtils.loadAnimation(getContext(),R.anim.bounce));
+                    binding.constraintLayout3.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
         binding.editTextTextPersonName3.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -104,23 +130,26 @@ public class LoginFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 binding.checkBox3.setChecked(false);
-                String password = binding.editTextTextPersonName3.getText().toString();
-                pass = password;
-                if (binding.editTextTextPersonName3.getTag().equals("0")) {
+                String password = "";
+                password +=binding.editTextTextPersonName3.getText().toString();
+                if(!password.equals("")) {
+                    pass = password;
+                    Log.e("login",""+password);
+                    if (binding.editTextTextPersonName3.getTag().equals("0")) {
 
-                    if (password.length() == 4) {
-                        Cursor cursor = dbLogin.getData("SELECT * FROM login where username='" + id + "' and password='" + password + "'");
-                        if (cursor.getCount() > 0) {
-                            binding.checkBox3.setChecked(true);
-                            binding.button4.setText("Giriş Yap");
-                            binding.button4.setTag("2");
-                        } else {
-                            binding.editTextTextPersonName3.setText("");
+                        if (password.length() == 4) {
+                            Cursor cursor = dbLogin.getData("SELECT * FROM login where username='" + id + "' and password='" + password + "'");
+                            if (cursor.getCount() > 0) {
+                                binding.checkBox3.setChecked(true);
+                                binding.button4.setText("Giriş Yap");
+                                binding.button4.setTag("2");
+                            } else {
+                                binding.editTextTextPersonName3.setText("");
+                            }
                         }
+
                     }
-
                 }
-
             }
         });
 
@@ -201,7 +230,7 @@ public class LoginFragment extends Fragment {
                                     binding.editTextTextPersonName2.setEnabled(true);
                                     binding.editTextTextPersonName3.setEnabled(true);
                                     dbLogin.deleteData("login");
-                                    dbLogin.addData(id, Integer.valueOf(pass), 0, 0, 0, 0);
+                                    dbLogin.addData(id, pass, 0, 0, 0, 0);
                                     new MyCustomDialog(getActivity()).Toast("Kullanıcı başarıyla oluşturuldu.");
                                     binding.button4.setTag("0");
                                     binding.editTextTextPersonName2.setTag("0");

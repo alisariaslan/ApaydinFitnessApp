@@ -12,7 +12,7 @@
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/black</item>
         <!-- Customize your theme here. -->
         <item name="cardBackgroundColor">#B3121000</item>
 
@@ -32,6 +32,10 @@
 
     <style name="Theme.ApaydinFitness.InCard" parent="Theme.MaterialComponents.DayNight">
         <item name="android:background">#222</item>
+    </style>
+
+    <style name="Theme.ApaydinFitness.InItem" parent="Theme.MaterialComponents.DayNight">
+        <item name="android:background">#252525</item>
     </style>
 
     <style name="Theme.ApaydinFitness.OnizleHareket" parent="Theme.MaterialComponents.DayNight">

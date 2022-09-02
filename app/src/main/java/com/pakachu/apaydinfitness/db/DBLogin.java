@@ -20,7 +20,7 @@ public class DBLogin extends SQLiteOpenHelper {
     private final String COL7 = "logged";
 
     public DBLogin(Context context) {
-        super(context, TABLENAME, null, 2);
+        super(context, TABLENAME, null, 3);
     }
     //INTEGER
     //TEXT
@@ -29,7 +29,7 @@ public class DBLogin extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String createTable = "CREATE TABLE " + TABLENAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COL2 + " TEXT," +
-                COL3 + " INTEGER," +
+                COL3 + " TEXT," +
                 COL4 + " INTEGER," +
                 COL5 + " INTEGER," +
                 COL6 + " INTEGER," +
@@ -43,7 +43,7 @@ public class DBLogin extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLENAME);
         onCreate(db);
     }
-    public void addData(String id,int pin,int remember,int easylogin,int clearence,int logged) {
+    public void addData(String id,String pin,int remember,int easylogin,int clearence,int logged) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL2, id);

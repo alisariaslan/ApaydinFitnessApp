@@ -109,8 +109,11 @@ public class DBLocal extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT * FROM " + TABLENAME;
         Cursor data = db.rawQuery(query, null);
-        data.moveToFirst();
-        return data.getString(2);
+        if(data.getCount()>0) {
+            data.moveToFirst();
+            return data.getString(2);
+        } else
+            return "";
     }
 
     public Cursor getData(String sql) {

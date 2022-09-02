@@ -261,10 +261,6 @@ public class AntrenmanOlusturFragment extends Fragment {
         });
     }
 
-    public void ReSafe(boolean setEnabled) {
-        binding.reciview2.setEnabled(setEnabled);
-    }
-
     private void Onizle(int pos, boolean reset) {
         Log.e("looptest", "true");
         ArrayList<OnizleItem> onizleItemArrayList = new ArrayList<>();

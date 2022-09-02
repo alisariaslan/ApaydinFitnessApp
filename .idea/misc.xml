@@ -43,13 +43,13 @@
         <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/fragment_antrenman_tam_ekran.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/fragment_antrenor_menu.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/fragment_arena.xml" value="0.264" />
-        <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/fragment_diet.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/fragment_diet.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/fragment_duyurular.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/fragment_duyurular_admin.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/fragment_first.xml" value="0.4025670945157526" />
         <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/fragment_games.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/fragment_iletisim.xml" value="0.22" />
-        <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/fragment_login.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/fragment_login.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/fragment_main.xml" value="0.20863616930312098" />
         <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/fragment_olculerim.xml" value="0.20863616930312098" />
         <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/fragment_saatler.xml" value="0.22" />
@@ -57,6 +57,7 @@
         <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/fragment_x_o_x.xml" value="0.20863616930312098" />
         <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/list_detay.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/list_duyuru.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/list_food.xml" value="0.4" />
         <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/list_gun.xml" value="0.3333333333333333" />
         <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/list_hareket.xml" value="0.3333333333333333" />
         <entry key="..\:/AndroidStudioProjects/ApaydinFitness/app/src/main/res/layout/list_item.xml" value="0.6" />
