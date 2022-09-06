@@ -77,6 +77,15 @@ public class DBIdman extends SQLiteOpenHelper {
         db.insert(TABLE2, null, contentValues);
     }
 
+    public boolean CheckData(String hareketAdi) {
+        Cursor cursor = getData("SELECT hareket FROM hareketler WHERE hareket ='"+hareketAdi+"'");
+        if(cursor.moveToFirst()) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     public Cursor getDataFromHareketTable() {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT * FROM " + TABLE2;

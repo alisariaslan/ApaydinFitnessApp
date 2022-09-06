@@ -9,8 +9,8 @@ android {
         applicationId "com.pakachu.apaydinfitness"
         minSdk 24
         targetSdk 32
-        versionCode 10
-        versionName "Mekik"
+        versionCode 11
+        versionName "DumbellRow"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 

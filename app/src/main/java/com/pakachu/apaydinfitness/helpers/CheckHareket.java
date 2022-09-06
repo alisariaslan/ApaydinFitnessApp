@@ -74,7 +74,7 @@ public class CheckHareket {
             case "facepull": assetLocation="icon/ropepushdown.png"; break;
 
             //KARIN HAREKETLERİ
-            case "plank": assetLocation="icon/dips.png"; break;
+            case "plank": assetLocation="icon/plank.png"; break;
             case "crunch": assetLocation="icon/crunches.png"; break;
             case "knee to chest": assetLocation="icon/kneetochest.png"; break;
             case "toe tap": assetLocation="icon/toetap.png"; break;

@@ -3,6 +3,8 @@ package com.pakachu.apaydinfitness.helpers;
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
 
+import androidx.appcompat.content.res.AppCompatResources;
+
 import com.pakachu.apaydinfitness.R;
 
 public class CheckDetay {
@@ -329,6 +331,10 @@ public class CheckDetay {
                 videoURL = "https://youtu.be/xdI5hlBLD1I";
                 gifID = R.drawable.russian_twist;
                 musclesWorked = imageProcess.GetDrawableFromAssets("musclesworked/russiantwist.jpg", false);
+                break;
+            default:
+                gifID = R.drawable.error;
+                musclesWorked = AppCompatResources.getDrawable(activity,R.drawable.fare);
                 break;
 
         }

@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 
 import com.pakachu.apaydinfitness.databinding.FragmentIletisimBinding;
+import com.pakachu.apaydinfitness.helpers.AddLoader;
 
 public class IletisimFragment extends Fragment {
 
@@ -63,6 +64,9 @@ public class IletisimFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        AddLoader addLoader = new AddLoader(getActivity());
+        addLoader.RequestInterstatial();
     }
 
     @Override

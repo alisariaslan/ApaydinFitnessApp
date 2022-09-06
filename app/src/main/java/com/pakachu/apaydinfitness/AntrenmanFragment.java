@@ -1,39 +1,42 @@
 package com.pakachu.apaydinfitness;
 
 import android.database.Cursor;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AnimationUtils;
 
-import com.pakachu.apaydinfitness.adapters.ProgramAdapter;
-import com.pakachu.apaydinfitness.adapters.ProgramItem;
+import com.pakachu.apaydinfitness.adapters.idman.ProgramAdapter;
+import com.pakachu.apaydinfitness.adapters.idman.ProgramItem;
 import com.pakachu.apaydinfitness.databinding.FragmentAntrenmanBinding;
-import com.pakachu.apaydinfitness.databinding.FragmentMainBinding;
 import com.pakachu.apaydinfitness.db.DBIdman;
 import com.pakachu.apaydinfitness.helpers.AddLoader;
 import com.pakachu.apaydinfitness.helpers.DefaultProgram;
 import com.journeyapps.barcodescanner.ScanContract;
 import com.journeyapps.barcodescanner.ScanOptions;
+import com.pakachu.apaydinfitness.helpers.StringCompressor;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
 
+@RequiresApi(api = Build.VERSION_CODES.O)
 public class AntrenmanFragment extends Fragment {
 
     private FragmentAntrenmanBinding binding;
@@ -51,10 +54,13 @@ public class AntrenmanFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        AntrenmanlarLoad();
-
         AddLoader addLoader = new AddLoader(getActivity());
         addLoader.RequestInterstatial();
+
+        AntrenmanlarLoad();
+
+        DefaultProgram defaultProgram=new DefaultProgram(getActivity());
+        defaultProgram.CheckUP();
 
         binding.button6.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,8 +87,19 @@ public class AntrenmanFragment extends Fragment {
                 if (result.getContents() == null) {
                     new MyCustomDialog(getActivity()).Toast("İptal Edildi");
                 } else {
-                    String resultString = result.getContents();
-                    QRileOlustur(resultString);
+                    String qrString = result.getContents();
+
+                    //DECOMPRESSION
+                    StringCompressor stringCompressor = new StringCompressor(getActivity());
+                    try {
+                        qrString = stringCompressor.decompressB64(qrString);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        Log.e("qr","BASE64 DECOMPRESSION ERROR!!!");
+                    }
+                    Log.e("qr","DECOMPRESSED:("+qrString.length() +")"+qrString);
+
+                    QRileOlustur(qrString);
                 }
             });
 
@@ -108,29 +125,6 @@ public class AntrenmanFragment extends Fragment {
         binding.recyview.setAdapter(myAdapter);
         if(myAdapter.getItemCount()>0)
         binding.textView50.setText(""+myAdapter.getItemCount()+" adet programınız bulunmaktadır");
-        if(programItemArrayList.size()==0) {
-            MyCustomDialog myCustomDialog=new MyCustomDialog(getActivity());
-            myCustomDialog.setButtons("Oluştur","İptal");
-            myCustomDialog.setContent("Görünürde hiç antrenman programınız yok.\n\nVarsayılan antrenman programlarını yüklemek ister misiniz?");
-            myCustomDialog.positive.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    myCustomDialog.dissmiss();
-                    DefaultProgram defaultProgram=new DefaultProgram();
-                    defaultProgram.STANDARTSPLIT(getActivity());
-                    defaultProgram.STANDARTFULLBODY(getActivity());
-                    AntrenmanlarLoad();
-                }
-            });
-            myCustomDialog.negative.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    myCustomDialog.dissmiss();
-                }
-            });
-            myCustomDialog.show(true);
-        }
-
     }
 
     private void QRileOlustur(String resultString) {

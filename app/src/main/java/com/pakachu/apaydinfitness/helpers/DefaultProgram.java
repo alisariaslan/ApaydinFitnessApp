@@ -1,14 +1,48 @@
 package com.pakachu.apaydinfitness.helpers;
 
 import android.app.Activity;
+import android.view.View;
 
+import com.pakachu.apaydinfitness.MyCustomDialog;
 import com.pakachu.apaydinfitness.R;
 import com.pakachu.apaydinfitness.db.DBIdman;
 
 public class DefaultProgram {
-    public void STANDARTSPLIT(Activity activity) {
-        DBIdman dbIdman = new DBIdman(activity);
 
+    private Activity activity;
+
+    public DefaultProgram(Activity activity) {
+        this.activity = activity;
+    }
+
+    public void CheckUP() {
+        DBIdman dbIdman = new DBIdman(activity);
+        int count = dbIdman.getDataFromProgramTable().getCount();
+        if (count == 0) {
+            MyCustomDialog myCustomDialog = new MyCustomDialog(activity);
+            myCustomDialog.setButtons("Oluştur", "İptal");
+            myCustomDialog.setContent("Görünürde hiç antrenman programınız yok.\n\nVarsayılan antrenman programlarını yüklemek ister misiniz?");
+            myCustomDialog.positive.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    myCustomDialog.dissmiss();
+                    STANDARTSPLIT();
+                    STANDARTFULLBODY();
+                    new MyCustomDialog(activity).Toast("Bütün varsayılan programlar eklendi. Lütfen sayfayı kapatıp tekrar açın.");
+                }
+            });
+            myCustomDialog.negative.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    myCustomDialog.dissmiss();
+                }
+            });
+            myCustomDialog.show(false);
+        }
+    }
+
+    private void STANDARTSPLIT() {
+        DBIdman dbIdman = new DBIdman(activity);
         dbIdman.addDataToProgramTable("standartsplit", "pazartesi\nsalı\nçarşamba\nperşembe\ncuma\ncumartesi\npazar");
         String createsql = "CREATE TABLE table0 " +
                 "(id INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -81,7 +115,7 @@ public class DefaultProgram {
         dbIdman.executeSQL("INSERT INTO table0 (column6) VALUES ('off')");
     }
 
-    public void STANDARTFULLBODY(Activity activity) {
+    private void STANDARTFULLBODY() {
         DBIdman dbIdman = new DBIdman(activity);
         dbIdman.addDataToProgramTable("standartfullbody", "pazartesi\nsalı\nçarşamba\nperşembe\ncuma\ncumartesi\npazar");
         String createsql = "CREATE TABLE table1 " +

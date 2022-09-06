@@ -12,14 +12,12 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.pakachu.apaydinfitness.adapters.DuyuruAdapter;
-import com.pakachu.apaydinfitness.adapters.DuyuruItem;
-import com.pakachu.apaydinfitness.adapters.ProgramAdapter;
-import com.pakachu.apaydinfitness.adapters.ProgramItem;
+import com.pakachu.apaydinfitness.adapters.duyuru.DuyuruAdapter;
+import com.pakachu.apaydinfitness.adapters.duyuru.DuyuruItem;
 import com.pakachu.apaydinfitness.databinding.FragmentDuyurularBinding;
-import com.pakachu.apaydinfitness.db.DBIdman;
 import com.pakachu.apaydinfitness.db.DBLogin;
 import com.pakachu.apaydinfitness.db.DBNotif;
+import com.pakachu.apaydinfitness.helpers.AddLoader;
 
 import java.util.ArrayList;
 
@@ -40,6 +38,9 @@ public class DuyurularFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        AddLoader addLoader = new AddLoader(getActivity());
+        addLoader.RequestInterstatial();
 
         Getir();
 

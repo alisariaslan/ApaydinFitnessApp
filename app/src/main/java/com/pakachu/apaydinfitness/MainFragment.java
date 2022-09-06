@@ -1,14 +1,12 @@
 package com.pakachu.apaydinfitness;
 
 import android.animation.ObjectAnimator;
-import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
@@ -20,7 +18,6 @@ import com.pakachu.apaydinfitness.databinding.FragmentMainBinding;
 import com.pakachu.apaydinfitness.db.DBNotif;
 
 import java.util.ArrayList;
-import java.util.PrimitiveIterator;
 
 public class MainFragment extends Fragment {
 
@@ -306,8 +303,8 @@ public class MainFragment extends Fragment {
 
                     @Override
                     public void onFinish() {
-                        new MyCustomDialog(getActivity()).Toast("Bu bölüm henüz aktif değil");
-                        Unlocked();
+                        NavHostFragment.findNavController(MainFragment.this)
+                                .navigate(R.id.action_mainFragment_to_hareketlerFragment);
                     }
                 }.start();
             }

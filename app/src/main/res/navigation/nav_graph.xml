@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/dietFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/loginFragment"
@@ -45,6 +45,9 @@
         <action
             android:id="@+id/action_mainFragment_to_dietFragment"
             app:destination="@id/dietFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_hareketlerFragment"
+            app:destination="@id/hareketlerFragment" />
     </fragment>
     <fragment
         android:id="@+id/olculerimFragment"
@@ -122,4 +125,9 @@
         android:name="com.pakachu.apaydinfitness.games.xox.XOXFragment"
         android:label="fragment_x_o_x"
         tools:layout="@layout/fragment_x_o_x" />
+    <fragment
+        android:id="@+id/hareketlerFragment"
+        android:name="com.pakachu.apaydinfitness.HareketlerFragment"
+        android:label="fragment_hareketler"
+        tools:layout="@layout/fragment_hareketler" />
 </navigation>

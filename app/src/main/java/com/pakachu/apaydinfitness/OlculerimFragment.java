@@ -283,8 +283,10 @@ public class OlculerimFragment extends Fragment {
         JSONWorkbench jsonWorkbench = new JSONWorkbench(getActivity());
         dbLocal = new DBLocal(getActivity());
         hashing = new Hashing();
+
         AddLoader addLoader = new AddLoader(getActivity());
         addLoader.RequestInterstatial();
+
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String selectedDate = sdf.format(new Date(binding.calendarView.getDate()));
         binding.textView24.setText(selectedDate);

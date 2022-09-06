@@ -18,15 +18,15 @@ import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Toast;
 
-import com.pakachu.apaydinfitness.adapters.OnizleAdapter;
-import com.pakachu.apaydinfitness.adapters.OnizleItem;
+import com.pakachu.apaydinfitness.adapters.idman_olustur.OnizleAdapter;
+import com.pakachu.apaydinfitness.adapters.idman_olustur.OnizleItem;
 import com.pakachu.apaydinfitness.databinding.FragmentAntrenmanOlusturBinding;
 import com.pakachu.apaydinfitness.db.DBIdman;
 import com.pakachu.apaydinfitness.helpers.DefaultHareket;
-import com.pakachu.apaydinfitness.adapters.ItemAdapter;
-import com.pakachu.apaydinfitness.adapters.ItemItem;
+import com.pakachu.apaydinfitness.adapters.idman_olustur.ItemAdapter;
+import com.pakachu.apaydinfitness.adapters.idman_olustur.ItemItem;
+import com.pakachu.apaydinfitness.helpers.DefaultProgram;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -75,6 +75,14 @@ public class AntrenmanOlusturFragment extends Fragment {
         TumHareketler_SetSpinner();
         InitSpinners();
         InitViewButtons();
+
+        DefaultProgram defaultProgram=new DefaultProgram(getActivity());
+        defaultProgram.CheckUP();
+
+        DefaultHareket defaultHareket=new DefaultHareket(getActivity());
+        defaultHareket.antrenmanOlusturFragment = this;
+        defaultHareket.CheckUP();
+
         gunItemArrayList = new ArrayList<>();
 
         binding.btnProgramOlustur.setOnClickListener(new View.OnClickListener() {
@@ -422,7 +430,7 @@ public class AntrenmanOlusturFragment extends Fragment {
         inwork = false;
     }
 
-    private void HareketDuzenle_SetTumHareketlerSpinner() {
+    public void HareketDuzenle_SetTumHareketlerSpinner() {
         Cursor cursor = dbIdman.getData("SELECT DISTINCT bolgesi FROM hareketler");
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(getActivity(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
         while (cursor.moveToNext()) {
@@ -450,16 +458,11 @@ public class AntrenmanOlusturFragment extends Fragment {
         binding.reciview3.setAdapter(myAdapter);
     }
 
-    private int getTumHareketCount() {
-        return dbIdman.getDataFromHareketTable().getCount();
-    }
-
     private int getBolgeyeOzelHareketlerCount(String bolge) {
         return dbIdman.getData("SELECT * FROM hareketler WHERE bolgesi='" + bolge + "'").getCount();
     }
 
     private void TumHareketler_SetSpinner() {
-        int hareketCount = getTumHareketCount();
         Cursor cursor = dbIdman.getData("SELECT DISTINCT bolgesi FROM hareketler");
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(getActivity(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
         while (cursor.moveToNext()) {
@@ -469,36 +472,7 @@ public class AntrenmanOlusturFragment extends Fragment {
         binding.spinner6.setAdapter(spinnerAdapter);
         binding.editTextTextPersonName6.setText("");
         binding.textView40.setText("");
-        binding.textView22.setText(hareketCount + " Adet Toplam Hareket Mevcut");
         HareketDuzenle_SetTumHareketlerSpinner();
-        if (hareketCount == 0) {
-            MyCustomDialog myCustomDialog = new MyCustomDialog(getActivity());
-            myCustomDialog.setButtons("Oluştur", "İptal");
-            myCustomDialog.setContent("Görünürde hiç hareketiniz yok.\n\nVarsayılan hareketleri yüklemek ister misiniz?");
-            myCustomDialog.positive.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    myCustomDialog.dissmiss();
-                    DefaultHareket defaultHareket = new DefaultHareket(getActivity());
-                    defaultHareket.Gogus();
-                    defaultHareket.Sırt();
-                    defaultHareket.OnKol();
-                    defaultHareket.ArkaKol();
-                    defaultHareket.Bacak();
-                    defaultHareket.Omuz();
-                    defaultHareket.Karin();
-                    defaultHareket.Diger();
-                    TumHareketler_SetSpinner();
-                }
-            });
-            myCustomDialog.negative.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    myCustomDialog.dissmiss();
-                }
-            });
-            myCustomDialog.show(true);
-        }
     }
 
     private void TumHareketler_SetListView(int pos) {
@@ -518,6 +492,7 @@ public class AntrenmanOlusturFragment extends Fragment {
         binding.reciview4.setLayoutManager(layoutManager);
         binding.reciview4.setAdapter(myAdapter);
         HareketDuzenle_SetTumHareketlerListView(binding.spinner8.getSelectedItemPosition());
+        binding.textView22.setText(cursor.getCount()+" Adet Toplam Hareket Mevcut");
     }
 
     public void TumHareketler_HareketSil(int pos) {
@@ -533,7 +508,7 @@ public class AntrenmanOlusturFragment extends Fragment {
                 dbIdman.executeSQL("DELETE FROM hareketler WHERE hareket='" + selectedHareketString + "' AND bolgesi='" + selectedBolgeString + "'");
                 TumHareketler_SetListView(binding.spinner6.getSelectedItemPosition());
                 HareketDuzenle_SetTumHareketlerListView(binding.spinner8.getSelectedItemPosition());
-                binding.textView22.setText(getTumHareketCount() + " Adet Toplam Hareket Mevcut");
+                binding.textView22.setText(dbIdman.getDataFromHareketTable().getCount() + " Adet Toplam Hareket Mevcut");
                 myCustomDialog.dissmiss();
             }
         });
@@ -680,7 +655,7 @@ public class AntrenmanOlusturFragment extends Fragment {
         super.onDestroyView();
         binding = null;
 
-        if(timer)
+        if (timer)
             countDownTimer.cancel();
     }
 }

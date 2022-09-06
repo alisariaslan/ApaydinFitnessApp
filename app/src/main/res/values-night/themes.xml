@@ -1,7 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.ApaydinFitness" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <item name="android:windowTranslucentStatus">true</item>
+<!--        <item name="android:windowTranslucentStatus">true</item>-->
 <!--        <item name="android:windowTranslucentNavigation">true</item>-->
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
@@ -15,7 +15,11 @@
         <item name="android:statusBarColor" tools:targetApi="l">@color/black</item>
         <!-- Customize your theme here. -->
         <item name="cardBackgroundColor">#B3121000</item>
+    </style>
 
+    <style name="Theme.ApaydinFitness.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
     <style name="Theme.ApaydinFitness.Child" parent="Theme.MaterialComponents.DayNight.DarkActionBar">

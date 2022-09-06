@@ -8,18 +8,15 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.CountDownTimer;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
-import android.widget.Toast;
 
-import com.pakachu.apaydinfitness.adapters.OnizleAdapter;
-import com.pakachu.apaydinfitness.adapters.OnizleItem;
-import com.pakachu.apaydinfitness.adapters.RekorItem;
-import com.pakachu.apaydinfitness.adapters.RekorItemAdapter;
+import com.pakachu.apaydinfitness.adapters.rekor.RekorItem;
+import com.pakachu.apaydinfitness.adapters.rekor.RekorItemAdapter;
 import com.pakachu.apaydinfitness.databinding.FragmentArenaBinding;
+import com.pakachu.apaydinfitness.helpers.AddLoader;
 import com.pakachu.apaydinfitness.helpers.JSONWorkbench;
 
 import java.util.ArrayList;
@@ -40,6 +37,9 @@ public class ArenaFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentArenaBinding.inflate(inflater, container, false);
+
+        AddLoader addLoader = new AddLoader(getActivity());
+        addLoader.RequestInterstatial();
 
         binding.btn1Kolgetir.setOnClickListener(new View.OnClickListener() {
             @Override

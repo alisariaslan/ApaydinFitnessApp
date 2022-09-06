@@ -127,7 +127,7 @@
                                     android:layout_height="wrap_content"
                                     android:padding="10dp"
                                     android:progress="0"
-                                    android:progressTint="#FF9800" />
+                                    android:progressTint="#FF5722" />
 
                                 <TextView
                                     android:id="@+id/tv_karb"
@@ -150,7 +150,7 @@
                                     android:layout_height="wrap_content"
                                     android:padding="10dp"
                                     android:progress="0"
-                                    android:progressTint="#8BC34A" />
+                                    android:progressTint="#4CAF50" />
 
                                 <TextView
                                     android:id="@+id/tv_yag"
@@ -173,7 +173,7 @@
                                     android:layout_height="wrap_content"
                                     android:padding="10dp"
                                     android:progress="0"
-                                    android:progressTint="#F44336" />
+                                    android:progressTint="#FFEB3B" />
 
                                 <TextView
                                     android:id="@+id/textView67"
@@ -212,7 +212,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/audiowide"
-                                    android:text="Kaydet"
+                                    android:text="Geçmişe ekle"
                                     android:textColor="@color/textFrontOfYellow"
                                     android:translationY="10dp"
                                     android:visibility="gone"
@@ -599,8 +599,6 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="15dp"
                         android:layout_marginEnd="10dp"
-                        android:minHeight="200dp"
-                        android:paddingBottom="10dp"
                         android:theme="@style/Theme.ApaydinFitness.InCard"
                         app:cardCornerRadius="50dp"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -610,10 +608,7 @@
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:minHeight="200dp"
-                            android:visibility="visible"
-                            tools:visibility="visible">
+                            android:layout_height="wrap_content">
 
                             <TextView
                                 android:id="@+id/textView35"
@@ -628,31 +623,41 @@
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recyclerView3"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textView35" />
+
+                            <TextView
+                                android:id="@+id/textView89"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/audiowide"
+                                android:paddingBottom="15dp"
+                                android:text="Mevcut değil"
+                                android:textAlignment="center"
+                                android:textSize="16sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/recyclerView3" />
+
                             <Button
-                                android:id="@+id/button36"
+                                android:id="@+id/button37"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/audiowide"
-                                android:text="Bul"
+                                android:tag="0"
+                                android:text="Geçmişi Temizle"
                                 android:textColor="@color/textFrontOfYellow"
                                 android:translationY="10dp"
                                 app:backgroundTint="@color/cardBackground"
-                                app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent" />
-
-                            <ProgressBar
-                                android:id="@+id/progressBar"
-                                style="?android:attr/progressBarStyle"
-                                android:layout_width="wrap_content"
-                                android:layout_height="100dp"
-                                android:layout_marginStart="10dp"
-                                android:layout_marginEnd="10dp"
-                                android:visibility="gone"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.0"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
+                                app:layout_constraintTop_toBottomOf="@id/textView89" />
 
 
                         </androidx.constraintlayout.widget.ConstraintLayout>

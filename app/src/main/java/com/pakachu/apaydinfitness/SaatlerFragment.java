@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 
 import com.pakachu.apaydinfitness.databinding.FragmentSaatlerBinding;
+import com.pakachu.apaydinfitness.helpers.AddLoader;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -27,6 +28,9 @@ public class SaatlerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentSaatlerBinding.inflate(inflater, container, false);
+
+        AddLoader addLoader = new AddLoader(getActivity());
+        addLoader.RequestInterstatial();
 
         return binding.getRoot();
     }

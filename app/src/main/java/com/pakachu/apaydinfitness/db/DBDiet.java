@@ -24,7 +24,7 @@ public class DBDiet extends SQLiteOpenHelper {
 
     private final String TABLENAME3 = "pass_list";
     private final String COL222 = "food_indexes";
-    private final String COL333 = "required_calorie";
+    private final String COL333 = "taken_calorie";
     private final String COL444 = "date";
 
     public DBDiet(Context context) {
