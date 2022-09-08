@@ -53,7 +53,8 @@ public class XOXFragment extends Fragment {
         binding.btnCikis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                requireActivity().getSupportFragmentManager().popBackStack();
+                CheckTimers();
+                requireActivity().onBackPressed();
             }
         });
 
@@ -72,6 +73,8 @@ public class XOXFragment extends Fragment {
     }
 
     private void Start() {
+        CheckTimers();
+
         AddLoader addLoader = new AddLoader(getActivity());
         addLoader.RequestInterstatial();
 
@@ -105,12 +108,12 @@ public class XOXFragment extends Fragment {
                 countDownTimerStart = new CountDownTimer(5000, 1000) {
                     @Override
                     public void onTick(long millisUntilFinished) {
-                        timerStart=true;
+                        timerStart = true;
                     }
 
                     @Override
                     public void onFinish() {
-                        timerStart=false;
+                        timerStart = false;
                         int rnd = random.nextInt(2);
                         if (rnd == 0) {
                             NoReady();
@@ -352,15 +355,30 @@ public class XOXFragment extends Fragment {
     }
 
     private void CheckTimers() {
-        if (timerStart)
+        if (timerStart) {
             countDownTimerStart.cancel();
-        if (timerStartReady)
+            timerStart = false;
+        }
+
+        if (timerStartReady) {
             countDownTimerStartReady.cancel();
-        if (timerThink)
+            timerStartReady = false;
+        }
+
+        if (timerThink) {
             countDownTimerThink.cancel();
-        if (timerSay)
+            timerThink = false;
+        }
+
+        if (timerSay) {
             countDownTimerSay.cancel();
-        if (timerSaySub)
+            timerSay = false;
+        }
+
+        if (timerSaySub) {
             countDownTimerSaySub.cancel();
+            timerSaySub = false;
+        }
+
     }
 }

@@ -1,4 +1,4 @@
-package com.pakachu.apaydinfitness;
+package com.pakachu.apaydinfitness.customdialogs;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -11,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.content.res.AppCompatResources;
+
+import com.pakachu.apaydinfitness.R;
 
 public class QRDialog {
     private final Dialog dialog;

@@ -15,6 +15,7 @@ import android.view.animation.AnimationUtils;
 
 import com.pakachu.apaydinfitness.adapters.rekor.RekorItem;
 import com.pakachu.apaydinfitness.adapters.rekor.RekorItemAdapter;
+import com.pakachu.apaydinfitness.customdialogs.MyCustomDialog;
 import com.pakachu.apaydinfitness.databinding.FragmentArenaBinding;
 import com.pakachu.apaydinfitness.helpers.AddLoader;
 import com.pakachu.apaydinfitness.helpers.JSONWorkbench;

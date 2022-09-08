@@ -23,19 +23,16 @@ import android.widget.RadioButton;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.WriterException;
 import com.journeyapps.barcodescanner.BarcodeEncoder;
-import com.pakachu.apaydinfitness.MyCustomDialog;
+import com.pakachu.apaydinfitness.customdialogs.MyCustomDialog;
 import com.pakachu.apaydinfitness.R;
 import com.pakachu.apaydinfitness.databinding.FragmentAntrenorMenuBinding;
 import com.pakachu.apaydinfitness.db.DBLocal;
-import com.pakachu.apaydinfitness.db.DBLogin;
-import com.pakachu.apaydinfitness.helpers.AddLoader;
 import com.pakachu.apaydinfitness.helpers.Hashing;
 import com.pakachu.apaydinfitness.helpers.JSONWorkbench;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Locale;
 
 

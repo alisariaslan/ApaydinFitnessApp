@@ -48,6 +48,15 @@
         <action
             android:id="@+id/action_mainFragment_to_hareketlerFragment"
             app:destination="@id/hareketlerFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_araclarFragment"
+            app:destination="@id/araclarFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_takviyelerFragment"
+            app:destination="@id/takviyelerFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_fitopediaFragment"
+            app:destination="@id/fitopediaFragment" />
     </fragment>
     <fragment
         android:id="@+id/olculerimFragment"
@@ -130,4 +139,19 @@
         android:name="com.pakachu.apaydinfitness.HareketlerFragment"
         android:label="fragment_hareketler"
         tools:layout="@layout/fragment_hareketler" />
+    <fragment
+        android:id="@+id/araclarFragment"
+        android:name="com.pakachu.apaydinfitness.AraclarFragment"
+        android:label="fragment_araclar"
+        tools:layout="@layout/fragment_araclar" />
+    <fragment
+        android:id="@+id/takviyelerFragment"
+        android:name="com.pakachu.apaydinfitness.TakviyelerFragment"
+        android:label="fragment_takviyeler"
+        tools:layout="@layout/fragment_takviyeler" />
+    <fragment
+        android:id="@+id/fitopediaFragment"
+        android:name="com.pakachu.apaydinfitness.FitopediaFragment"
+        android:label="fragment_fitopedia"
+        tools:layout="@layout/fragment_fitopedia" />
 </navigation>

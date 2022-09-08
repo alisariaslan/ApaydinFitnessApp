@@ -6,7 +6,7 @@ import android.view.View;
 
 import com.pakachu.apaydinfitness.AntrenmanOlusturFragment;
 import com.pakachu.apaydinfitness.HareketlerFragment;
-import com.pakachu.apaydinfitness.MyCustomDialog;
+import com.pakachu.apaydinfitness.customdialogs.MyCustomDialog;
 import com.pakachu.apaydinfitness.db.DBIdman;
 
 import java.util.ArrayList;

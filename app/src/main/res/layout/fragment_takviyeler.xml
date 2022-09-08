@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TakviyelerFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:minHeight="800dp"
+                android:theme="@style/Theme.ApaydinFitness.Card"
+                app:cardBackgroundColor="#B3121000"
+                app:cardCornerRadius="50dp"
+                app:contentPaddingBottom="30dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textViewBaslik"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/audiowide"
+                        android:text="Takviyeler 🍼"
+                        android:textAlignment="center"
+                        android:textColor="#D1D1D1"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/audiowide"
+                        android:padding="15dp"
+                        android:shadowColor="#000000"
+                        android:shadowRadius="15"
+                        android:text="Beslenmenize ve idmanlarınza yardımcı takviyeler"
+                        android:textAlignment="center"
+                        android:textColor="#EEE"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#4D121000"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:src="@drawable/preworkout" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/audiowide"
+                            android:shadowColor="#000000"
+                            android:shadowRadius="15"
+                            android:text="Pre-Workout"
+                            android:textAlignment="center"
+                            android:textColor="#EEE"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/allerta"
+                            android:padding="15dp"
+                            android:shadowColor="#000000"
+                            android:shadowRadius="15"
+                            android:text="Pre-Workout Nedir? En iyi pre workout takviyeleri, egzersiz hacmini ve yoğunluğunu artırmaya yardımcı olmak için tasarlanmıştır. Böylece ekstra setler ve harcanan dakikalar büyük kazançlar sağlar. Sıkı çalışmaların karşılığını görerek daha fazla motivasyon elde edilir. Ve ne kadar sıkı çalışılırsa, o kadar fazla ilerleme kaydedilir. Bu nedenle uygun antrenman ve beslenme programı ile birleştirildiğinde pre workout takviye kullanmak, sadece bugünün antrenmanı için değil, yarın ve diğer günlerde daha fazla tekrar yapabilmek adına kendinizi daha fazla zorlamanıza destek olabilir."
+                            android:textAlignment="center"
+                            android:textColor="#EEE"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#4D121000"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            app:srcCompat="@drawable/bcaa" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/audiowide"
+                            android:shadowColor="#000000"
+                            android:shadowRadius="15"
+                            android:text="BCAA"
+                            android:textAlignment="center"
+                            android:textColor="#EEE"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/allerta"
+                            android:padding="15dp"
+                            android:shadowColor="#000000"
+                            android:shadowRadius="15"
+                            android:text="BCAA Nedir? BCAA olarak bilinen dallı zincirli amino asit destekleri; valin, izolösin ve lösindden oluşan, yağsız kas kütlesini ve performansını arttırmak isteyen sporcular tarafından sıklıkla kullanılan gıda takviyeleridir.  BCAA’lar; kas yorgunluğunu azaltır, iyileşme dönemini hızlandırır ve antrenman sırasında kaslardan amino asit kaybını önleyerek vücudun daha iyi protein absorbe etmesini sağlar. Valin, izolösin ya da lösinden herhangi biri vücutta yeterli seviyede yoksa, kas kaybı oluşacaktır. Diğer amino asitlerin aksine BCAA’lar karaciğerde değil kaslarda metabolize edilir."
+                            android:textAlignment="center"
+                            android:textColor="#EEE"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#4D121000"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            app:srcCompat="@drawable/creatine" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/audiowide"
+                            android:shadowColor="#000000"
+                            android:shadowRadius="15"
+                            android:text="Kreatin"
+                            android:textAlignment="center"
+                            android:textColor="#EEE"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/allerta"
+                            android:padding="15dp"
+                            android:shadowColor="#000000"
+                            android:shadowRadius="15"
+                            android:text="Kreatin Ne İşe Yarar? Kreatin öncelikle yaşa bağlı kas kaybının önüne geçmektedir. Yapılan bir araştırmaya göre kreatin kullanarak direnç eğitimi yapan yaşlı yetişkinlerde kas gücünün artış gösterdiği tespit edilmiştir. Ancak tek doz olarak alındığında veya direnç eğitimi olmadan kullanıldığında yararlarından yeteri kadar bahsedilememektedir.  Kreatin vücut tarafından atletik performans sırasında kullanılmaktadır. Atletlerde kürek çekme performansını ya da yüksek atlama sporu yapanlarda sıçrama performansını geliştirip sporculara yardımcı olabilmektedir. Ancak kreatinin sprint, bisiklet veya yüzme performansı üzerindeki etkisi değişmektedir."
+                            android:textAlignment="center"
+                            android:textColor="#EEE"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#4D121000"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            app:srcCompat="@drawable/karnitin" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/audiowide"
+                            android:shadowColor="#000000"
+                            android:shadowRadius="15"
+                            android:text="L-karnitin"
+                            android:textAlignment="center"
+                            android:textColor="#EEE"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/allerta"
+                            android:padding="15dp"
+                            android:shadowColor="#000000"
+                            android:shadowRadius="15"
+                            android:text="L-karnitin lisin türevi, suda çözünebilen bir bileşiktir. Yağ asitlerinin mitokondriye taşınmasını sağlayarak, yağ asidi metabolizmasında önemli bir rol üstlenir.1 Antioksidan aktiviteye sahiptir.1 Metabolizmada yağ yakımını artırıcı, kasları güçlendirici, sperm hareketliliğini artırıcı özellikleri vardır.1 Bağışıklık sistemi, yüksek tansiyon, diyabet gibi hastalıkların tedavisinde yardımcı olabilir.1 Kardiyovasküler hastalıkları azalttığı ve lipid mekanızmasında olumlu etkileri olduğu için diyabet tedavisinde destekleyici olarak kullanılabileceği belirtilmiştir.2 C vitamini ve B 12 takviyesinin karnitin emilimini artırdığı gözlemlenmiştir.2 Enerji üretiminde merkezi bir rol oynadığı için, sporcuların dayanıklılığını ve performansını artırmaya destek olur.3 Oksijen tüketimini artırdığı, egzersiz sonrası iyileşme sürecini hızlandırdığı, kas yaralanmalarını ve ağrılarını hafiflettiği ve yağ yakımını önemli ölçüde artırdığı gösterilmiştir.3 Uygun diyet ve egzersiz ile birlikte kullanıldığında kilo vermede etkili olduğu bilinmektedir."
+                            android:textAlignment="center"
+                            android:textColor="#EEE"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#4D121000"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            app:srcCompat="@drawable/karnitin"
+                            tools:srcCompat="@drawable/protein" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/audiowide"
+                            android:shadowColor="#000000"
+                            android:shadowRadius="15"
+                            android:text="Protein tozu"
+                            android:textAlignment="center"
+                            android:textColor="#EEE"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/allerta"
+                            android:padding="15dp"
+                            android:shadowColor="#000000"
+                            android:shadowRadius="15"
+                            android:text="Spor yapsanız da yapmasanız da her gün belirli bir miktarda protein almanız gerekmektedir. Bu miktar gram olarak spor yapanlar için kilosunun iki katı, yapmayanlar için ise kilosu kadardır. Aldığınız protein ile birlikte gelen amino asitler, sağlığınızı korumak için vücudunuzun çeşitli bölgelerinde farklı amaçlar için kullanılırlar. Proteinin belki de en önemli faydalarından biri yeni kas dokusu inşa etmek ve hasar gören kasları onarmaktır.  Yeteri kadar protein alınmadığında vücutta yeni kas dokusu oluşmamaya başlar. Protein, aynı zamanda vücudun nitrojen dengesini de sağlar (vücut geliştiriyorsanız nitrojen seviyesi artacaktır). Aldığınız protein, yağsız kırmızı kas kütlesi denilen ‘lean body mass’i kaybetmemenize yardımcı olur.  Zayıflamaya çalışıyor ve ekmek, makarna ve pirinç gibi karbonhidratları tüketmekten kaçınıyorsanız, protein ihtiyacınız artacaktır. Yeterince et, süt, yumurta, peynir, yoğurt ya da balık gibi hayvansal proteinler almıyorsanız, protein tozu bu konuda size büyük fayda sağlayacaktır."
+                            android:textAlignment="center"
+                            android:textColor="#EEE"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#4D121000"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            app:srcCompat="@drawable/carb_powder"
+                            tools:srcCompat="@drawable/carb_powder" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/audiowide"
+                            android:shadowColor="#000000"
+                            android:shadowRadius="15"
+                            android:text="Karbonhidrat tozu"
+                            android:textAlignment="center"
+                            android:textColor="#EEE"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/allerta"
+                            android:padding="15dp"
+                            android:shadowColor="#000000"
+                            android:shadowRadius="15"
+                            android:text="Karbonhidrat tozunu genelde vücut geliştirme ve fiziksel sporla uğraşanlar kullanır. Enerji seviyesini yükseltmeye yardımcı olur. Ayrıca testosteron hormonunu güçlendirerek egzersizle beraber kasların gelişimine ve kütlesinin artmasına neden olur.  Karbonhidrat tozu fiziksel aktivite sonunda kalori yakımını minimum seviyede tutar. Bu açıdan enerji depolanması olur.  Kilo almak isteyenler sadece karbonhidrat tozu kullanarak kilo almaya çalışmaları yanlıştır.Bunun yanında egzersiz yapmak da gereklidir. Doğal beslenme biçiminizi de buna eklemeniz sağlıklıdır.  Besinlerden alınan karbonhidratlardan daha hızlı ve kolay sindirildiği için etkisi de çabuk gelişir. Doğal beslenmede aldığınız karbonhidratlarda ayrıca vitamin ve minerallerde alırsınız. O yüzden bunları da dikkatle almak gereklidir.  Karbonhidrat tozunu egzersiz öncesi ya da sonrası almak mümkündür. Bununla beraber diğer doğal yollarla da gıdaları almanız gerekir. Çünkü karbonhidrat tozu gıda değil bir takviye gıdadır. Kas kütlenizin artmasına ve kilo almanıza destek içindir."
+                            android:textAlignment="center"
+                            android:textColor="#EEE"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

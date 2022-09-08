@@ -1,8 +1,6 @@
 package com.pakachu.apaydinfitness;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -15,7 +13,6 @@ import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.CompoundButton;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -23,6 +20,7 @@ import androidx.navigation.fragment.NavHostFragment;
 
 //import com.pakachu.apaydinfitness.databinding.FragmentLoginBinding;
 
+import com.pakachu.apaydinfitness.customdialogs.MyCustomDialog;
 import com.pakachu.apaydinfitness.databinding.FragmentLoginBinding;
 import com.pakachu.apaydinfitness.db.DBLogin;
 

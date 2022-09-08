@@ -16,7 +16,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.pakachu.apaydinfitness.DietFragment;
-import com.pakachu.apaydinfitness.MyCustomDialog;
+import com.pakachu.apaydinfitness.customdialogs.MyCustomDialog;
 import com.pakachu.apaydinfitness.R;
 import com.pakachu.apaydinfitness.db.DBDiet;
 

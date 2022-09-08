@@ -22,8 +22,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.WriterException;
 import com.journeyapps.barcodescanner.BarcodeEncoder;
-import com.pakachu.apaydinfitness.MyCustomDialog;
-import com.pakachu.apaydinfitness.QRDialog;
+import com.pakachu.apaydinfitness.customdialogs.QRDialog;
 import com.pakachu.apaydinfitness.db.DBIdman;
 import com.pakachu.apaydinfitness.helpers.ImageProcess;
 import com.pakachu.apaydinfitness.R;
@@ -34,13 +33,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Base64;
-import java.util.zip.DataFormatException;
 
 public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ViewHolder> {
 

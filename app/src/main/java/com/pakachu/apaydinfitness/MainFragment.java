@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.pakachu.apaydinfitness.customdialogs.MyCustomDialog;
 import com.pakachu.apaydinfitness.databinding.FragmentMainBinding;
 import com.pakachu.apaydinfitness.db.DBNotif;
 
@@ -237,8 +238,8 @@ public class MainFragment extends Fragment {
 
                     @Override
                     public void onFinish() {
-                        new MyCustomDialog(getActivity()).Toast("Bu bölüm henüz aktif değil");
-                        Unlocked();
+                        NavHostFragment.findNavController(MainFragment.this)
+                                .navigate(R.id.action_mainFragment_to_araclarFragment);
                     }
                 }.start();
             }
@@ -259,8 +260,8 @@ public class MainFragment extends Fragment {
 
                     @Override
                     public void onFinish() {
-                        new MyCustomDialog(getActivity()).Toast("Bu bölüm henüz aktif değil");
-                        Unlocked();
+                        NavHostFragment.findNavController(MainFragment.this)
+                                .navigate(R.id.action_mainFragment_to_fitopediaFragment);
                     }
                 }.start();
             }
@@ -281,8 +282,8 @@ public class MainFragment extends Fragment {
 
                     @Override
                     public void onFinish() {
-                        new MyCustomDialog(getActivity()).Toast("Bu bölüm henüz aktif değil");
-                        Unlocked();
+                        NavHostFragment.findNavController(MainFragment.this)
+                                .navigate(R.id.action_mainFragment_to_takviyelerFragment);
                     }
                 }.start();
             }

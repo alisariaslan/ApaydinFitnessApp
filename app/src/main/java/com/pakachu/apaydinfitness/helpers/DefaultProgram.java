@@ -3,8 +3,7 @@ package com.pakachu.apaydinfitness.helpers;
 import android.app.Activity;
 import android.view.View;
 
-import com.pakachu.apaydinfitness.MyCustomDialog;
-import com.pakachu.apaydinfitness.R;
+import com.pakachu.apaydinfitness.customdialogs.MyCustomDialog;
 import com.pakachu.apaydinfitness.db.DBIdman;
 
 public class DefaultProgram {

@@ -15,11 +15,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 
-import com.pakachu.apaydinfitness.MyCustomDialog;
+import com.pakachu.apaydinfitness.customdialogs.MyCustomDialog;
 import com.pakachu.apaydinfitness.R;
 import com.pakachu.apaydinfitness.databinding.FragmentDuyurularAdminBinding;
 import com.pakachu.apaydinfitness.db.DBNotif;
-import com.pakachu.apaydinfitness.helpers.CheckNotif;
 import com.pakachu.apaydinfitness.helpers.JSONWorkbench;
 
 import java.text.SimpleDateFormat;

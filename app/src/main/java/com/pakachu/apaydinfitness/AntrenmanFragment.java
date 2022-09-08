@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 
 import com.pakachu.apaydinfitness.adapters.idman.ProgramAdapter;
 import com.pakachu.apaydinfitness.adapters.idman.ProgramItem;
+import com.pakachu.apaydinfitness.customdialogs.MyCustomDialog;
 import com.pakachu.apaydinfitness.databinding.FragmentAntrenmanBinding;
 import com.pakachu.apaydinfitness.db.DBIdman;
 import com.pakachu.apaydinfitness.helpers.AddLoader;

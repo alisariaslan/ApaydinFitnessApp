@@ -3,7 +3,6 @@ package com.pakachu.apaydinfitness.helpers;
 import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -12,7 +11,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.pakachu.apaydinfitness.MyCustomDialog;
+import com.pakachu.apaydinfitness.customdialogs.MyCustomDialog;
 
 import org.json.JSONArray;
 import org.json.JSONException;

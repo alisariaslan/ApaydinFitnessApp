@@ -21,6 +21,7 @@ import android.widget.ArrayAdapter;
 
 import com.pakachu.apaydinfitness.adapters.idman_olustur.OnizleAdapter;
 import com.pakachu.apaydinfitness.adapters.idman_olustur.OnizleItem;
+import com.pakachu.apaydinfitness.customdialogs.MyCustomDialog;
 import com.pakachu.apaydinfitness.databinding.FragmentAntrenmanOlusturBinding;
 import com.pakachu.apaydinfitness.db.DBIdman;
 import com.pakachu.apaydinfitness.helpers.DefaultHareket;

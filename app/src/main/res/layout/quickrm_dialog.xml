@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_dialogBaslik"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#FFEB3B"
+        android:backgroundTint="#FFEB3B"
+        android:fontFamily="@font/audiowide"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="Kapatmak için tıkla"
+        android:textAlignment="center"
+        android:textColor="#474747"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_dialogBaslik">
+
+        <TextView
+            android:id="@+id/tv_dialogtext1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/allerta"
+
+            android:padding="10dp"
+            android:text="Kaç kilo kaldırıyorum? "
+            android:textAlignment="center"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/et_yazkg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:fontFamily="@font/audiowide"
+            android:hint="yaz (kg)"
+            android:inputType="numberSigned"
+            android:maxLength="3"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/tv_dialogtext2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/allerta"
+
+            android:padding="10dp"
+            android:text="\? kiloyu gücüm kalmayana dek en fazla kaç sefer kaldırabiliyorum?"
+            android:textAlignment="center"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/et_yazrm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:fontFamily="@font/audiowide"
+            android:hint="yaz (tekrar)"
+            android:inputType="numberSigned"
+            android:maxLength="2"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/tv_dialogSonuclar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/audiowide"
+            android:padding="10dp"
+            android:text="Sonuçlar"
+            android:textAlignment="textStart"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_dialogLink"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+
+            android:fontFamily="@font/audiowide"
+            android:linksClickable="true"
+            android:padding="10dp"
+            android:scrollIndicators="bottom"
+            android:singleLine="false"
+            android:text="Daha fazla sonuç görmek, daha detaylı araştırma yapmak için buraya tıklayınız."
+            android:textAlignment="center"
+            android:textColor="#3F51B5"
+            android:textSize="16sp"
+            android:textStyle="italic" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

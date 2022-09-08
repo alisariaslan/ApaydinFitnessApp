@@ -9,8 +9,8 @@ android {
         applicationId "com.pakachu.apaydinfitness"
         minSdk 24
         targetSdk 32
-        versionCode 11
-        versionName "DumbellRow"
+        versionCode 12
+        versionName "LatPull"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 

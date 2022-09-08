@@ -1,11 +1,8 @@
 package com.pakachu.apaydinfitness;
 
-import android.animation.ObjectAnimator;
 import android.database.Cursor;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,21 +17,18 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.pakachu.apaydinfitness.customdialogs.MyCustomDialog;
 import com.pakachu.apaydinfitness.databinding.FragmentOlculerimBinding;
 import com.pakachu.apaydinfitness.db.DBLocal;
 import com.pakachu.apaydinfitness.db.DBLogin;
 import com.pakachu.apaydinfitness.helpers.AddLoader;
 import com.pakachu.apaydinfitness.helpers.Hashing;
 import com.pakachu.apaydinfitness.helpers.JSONWorkbench;
-import com.google.zxing.BarcodeFormat;
-import com.google.zxing.WriterException;
-import com.journeyapps.barcodescanner.BarcodeEncoder;
 import com.journeyapps.barcodescanner.ScanContract;
 import com.journeyapps.barcodescanner.ScanOptions;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -99,7 +93,7 @@ public class OlculerimFragment extends Fragment {
             binding.textView5.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         }
         float bmi = kilo / ((boy / 100) * (boy / 100));
-        float women = 5.4f;
+        float women = 15.8f;
         float man = 16.2f;
         float sex;
         if (cinsiyet.toUpperCase(Locale.ROOT).equals("ERKEK"))

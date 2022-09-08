@@ -36,7 +36,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_dialogText"
+        android:id="@+id/tv_dialogtext1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -66,7 +66,7 @@
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toTopOf="@+id/btn_negative"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_dialogText"
+        app:layout_constraintStart_toEndOf="@+id/tv_dialogtext1"
         app:layout_constraintTop_toBottomOf="@+id/tv_dialogBaslik"
         tools:visibility="visible" />
 
@@ -85,7 +85,7 @@
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toTopOf="@+id/btn_neutral"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_dialogText"
+        app:layout_constraintStart_toEndOf="@+id/tv_dialogtext1"
         app:layout_constraintTop_toBottomOf="@+id/btn_positive"
         tools:visibility="visible" />
 
@@ -104,7 +104,7 @@
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_dialogText"
+        app:layout_constraintStart_toEndOf="@+id/tv_dialogtext1"
         app:layout_constraintTop_toBottomOf="@+id/btn_negative"
         tools:visibility="visible" />
 

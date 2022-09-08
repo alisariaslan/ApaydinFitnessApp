@@ -19,6 +19,7 @@ import com.pakachu.apaydinfitness.adapters.diet.FoodAdapter;
 import com.pakachu.apaydinfitness.adapters.diet.FoodItem;
 import com.pakachu.apaydinfitness.adapters.diet.PastAdapter;
 import com.pakachu.apaydinfitness.adapters.diet.PastItem;
+import com.pakachu.apaydinfitness.customdialogs.MyCustomDialog;
 import com.pakachu.apaydinfitness.databinding.FragmentDietBinding;
 import com.pakachu.apaydinfitness.db.DBDiet;
 import com.pakachu.apaydinfitness.db.DBLocal;

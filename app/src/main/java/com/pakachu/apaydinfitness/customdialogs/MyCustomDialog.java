@@ -1,19 +1,18 @@
-package com.pakachu.apaydinfitness;
+package com.pakachu.apaydinfitness.customdialogs;
 
 import android.app.Activity;
 import android.app.Dialog;
-import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.content.res.AppCompatResources;
+
+import com.pakachu.apaydinfitness.R;
 
 public class MyCustomDialog {
     private final Dialog dialog;
@@ -44,7 +43,7 @@ public class MyCustomDialog {
         negative = dialog.findViewById(R.id.btn_negative);
         neutral = dialog.findViewById(R.id.btn_neutral);
         tv_baslik = dialog.findViewById(R.id.tv_dialogBaslik);
-        tv_content = dialog.findViewById(R.id.tv_dialogText);
+        tv_content = dialog.findViewById(R.id.tv_dialogtext1);
         iv_dialog = dialog.findViewById(R.id.iv_dialog);
     }
 
