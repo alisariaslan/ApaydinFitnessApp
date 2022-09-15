@@ -118,7 +118,7 @@ public class FitopediaFragment extends Fragment {
             Log.e("makale", "running...");
             binding.textView96.setText(makale.subSequence(0, myindex++));
             if (myindex < mylenght)
-                handler.postDelayed(characteradder, 0);
+                handler.postDelayed(characteradder, 50);
         }
     };
 
