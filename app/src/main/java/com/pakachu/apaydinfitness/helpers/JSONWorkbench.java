@@ -11,6 +11,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.pakachu.apaydinfitness.Credentials;
 import com.pakachu.apaydinfitness.customdialogs.MyCustomDialog;
 
 import org.json.JSONArray;
@@ -24,21 +25,25 @@ import java.util.Map;
 
 public class JSONWorkbench {
 
-    private String url = "http://bahadirduzcan.com.tr/pakachu/quick/select/";
-    private String url2 = "http://bahadirduzcan.com.tr/pakachu/quick/";
+    private String select_url = null;
+    private String other_url = null;
 
     private Context mContext;
     public boolean finishStatus = false;
+    private Credentials credentials;
 
     public JSONWorkbench(Context context) {
         mContext = context;
+        credentials = new Credentials();
+        select_url = credentials.getUrl_select();
+        other_url = credentials.getUrl_other();
     }
 
     public ArrayList<ArrayList> GET(String sql) {
         finishStatus = false;
         ArrayList<ArrayList> arrayListArrayList = new ArrayList<>();
         RequestQueue requestQueue = Volley.newRequestQueue(mContext);
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, select_url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
@@ -89,9 +94,9 @@ public class JSONWorkbench {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("token", "Pakachu-Token");
+                params.put("token", credentials.getToken());
                 params.put("Content-Type", "application/json; charset=utf-8");
-                params.put("User-Agent", "CenutaUA22");
+                params.put("User-Agent", credentials.getUser_agent());
                 return params;
             }
         };
@@ -102,7 +107,7 @@ public class JSONWorkbench {
     public void ADDUSER(String... strings) {
         finishStatus = false;
         RequestQueue requestQueue = Volley.newRequestQueue(mContext);
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url2, new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, other_url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 finishStatus = true;
@@ -126,9 +131,9 @@ public class JSONWorkbench {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("token", "Pakachu-Token");
+                params.put("token", credentials.getToken());
                 params.put("Content-Type", "application/json; charset=utf-8");
-                params.put("User-Agent", "CenutaUA22");
+                params.put("User-Agent", credentials.getUser_agent());
                 return params;
             }
         };
@@ -138,7 +143,7 @@ public class JSONWorkbench {
     public void UPDATEUSER(String columnName, String text, String id) {
         finishStatus = false;
         RequestQueue requestQueue = Volley.newRequestQueue(mContext);
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url2, new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, other_url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 finishStatus = true;
@@ -162,9 +167,9 @@ public class JSONWorkbench {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("token", "Pakachu-Token");
+                params.put("token", credentials.getToken());
                 params.put("Content-Type", "application/json; charset=utf-8");
-                params.put("User-Agent", "CenutaUA22");
+                params.put("User-Agent", credentials.getUser_agent());
                 return params;
             }
         };
@@ -174,7 +179,7 @@ public class JSONWorkbench {
     public void DELETEUSER(String id) {
         finishStatus = false;
         RequestQueue requestQueue = Volley.newRequestQueue(mContext);
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url2, new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, other_url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 finishStatus = true;
@@ -197,9 +202,9 @@ public class JSONWorkbench {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("token", "Pakachu-Token");
+                params.put("token", credentials.getToken());
                 params.put("Content-Type", "application/json; charset=utf-8");
-                params.put("User-Agent", "CenutaUA22");
+                params.put("User-Agent", credentials.getUser_agent());
                 return params;
             }
         };
@@ -209,7 +214,7 @@ public class JSONWorkbench {
     public void ADDNOTIF(String... strings) {
         finishStatus = false;
         RequestQueue requestQueue = Volley.newRequestQueue(mContext);
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url2, new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, other_url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 finishStatus = true;
@@ -233,9 +238,9 @@ public class JSONWorkbench {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("token", "Pakachu-Token");
+                params.put("token", credentials.getToken());
                 params.put("Content-Type", "application/json; charset=utf-8");
-                params.put("User-Agent", "CenutaUA22");
+                params.put("User-Agent", credentials.getUser_agent());
                 return params;
             }
         };
@@ -245,7 +250,7 @@ public class JSONWorkbench {
     public void SET(String sql) {
         finishStatus = false;
         RequestQueue requestQueue = Volley.newRequestQueue(mContext);
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url2, new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, other_url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 finishStatus = true;
@@ -269,9 +274,9 @@ public class JSONWorkbench {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("token", "Pakachu-Token");
+                params.put("token", credentials.getToken());
                 params.put("Content-Type", "application/json; charset=utf-8");
-                params.put("User-Agent", "CenutaUA22");
+                params.put("User-Agent", credentials.getUser_agent());
                 return params;
             }
         };

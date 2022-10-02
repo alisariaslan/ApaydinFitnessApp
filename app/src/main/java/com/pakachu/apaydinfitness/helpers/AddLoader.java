@@ -4,6 +4,7 @@ import android.app.Activity;
 
 import androidx.annotation.NonNull;
 
+import com.pakachu.apaydinfitness.Credentials;
 import com.pakachu.apaydinfitness.MainActivity;
 import com.pakachu.apaydinfitness.R;
 import com.google.android.gms.ads.AdRequest;
@@ -26,7 +27,7 @@ public class AddLoader {
         {
             if (MainActivity.addReadyToLoad) {
                 AdRequest adRequest = new AdRequest.Builder().build();
-                InterstitialAd.load(activity, activity.getResources().getString(R.string.add), adRequest,
+                InterstitialAd.load(activity, Credentials.getAdd_id(), adRequest,
                         new InterstitialAdLoadCallback() {
                             @Override
                             public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
